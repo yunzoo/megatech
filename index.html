@@ -45,19 +45,19 @@
         <h2 class="section-title">제품소개</h2>
         <div class="grid-container">
             <!-- 제품 카드 1 -->
-            <div class="card">
+            <div class="card reveal">
                 <img src="images/product_pet.jpg" alt="I-type PET 필름" class="responsive-img">
                 <h3>I-type PET 필름</h3>
                 <p>우수한 내열성과 치수 안정성을 자랑하는 고기능성 기재</p>
             </div>
             <!-- 제품 카드 2 -->
-            <div class="card">
+            <div class="card reveal">
                 <img src="images/product_silicone.jpg" alt="실리콘 점착 테이프" class="responsive-img">
                 <h3>실리콘 점착 테이프</h3>
                 <p>잔여물이 남지 않는 완벽한 리무버빌리티(Removability) 구현</p>
             </div>
             <!-- 제품 카드 3 -->
-            <div class="card">
+            <div class="card reveal">
                 <img src="images/product_release.jpg" alt="특수 이형제" class="responsive-img">
                 <h3>특수 이형제 (Release Agent)</h3>
                 <p>초정밀 공정에 최적화된 균일한 박리력 제공</p>
@@ -104,6 +104,28 @@
     <footer>
         <p>© 2026 MEGATECH Co., Ltd. All Rights Reserved.</p>
     </footer>
+    
+<script>
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal"); // reveal 클래스를 모두 찾음
 
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight; // 화면 높이
+        var elementTop = reveals[i].getBoundingClientRect().top; // 요소의 위치
+        var elementVisible = 150; // 요소가 화면 아래에서 150px 정도 보일 때 시작
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active"); // 화면에 보이면 active 클래스 추가
+        }
+    }
+}
+
+// 스크롤 할 때마다 reveal 함수 실행
+window.addEventListener("scroll", reveal);
+
+// 처음에 페이지 로드됐을 때도 한 번 실행 (이미 화면에 있는 요소 위해)
+reveal();
+</script>
+    
 </body>
 </html>
