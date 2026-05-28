@@ -4,46 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(주)메가테크</title>
-    <style>
-        body { font-family: sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
-        .hero { background: #0A369D; color: white; text-align: center; padding: 60px 20px; }
-        .hero h1 { margin: 0; font-size: 2.5rem; }
-        .hero p { margin: 10px 0 0 0; font-size: 1.2rem; opacity: 0.9; }
-
-        /* 모바일에서는 위아래로, PC에서는 좌우로 정렬되는 반응형 상자 */
-        .main-content { 
-            display: flex; 
-            flex-direction: column; 
-            padding: 30px 20px; 
-            gap: 20px; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
-
-        @media (min-width: 768px) {
-            .main-content { flex-direction: row; }
-            .content-box { flex: 1; }
-        }
-
-        .content-box { border: 1px solid #e0e0e0; padding: 25px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .content-box h2 { color: #0A369D; margin-top: 0; border-bottom: 2px solid #0A369D; padding-bottom: 8px; }
-        footer { background: #333; color: #ccc; text-align: center; padding: 20px; font-size: 0.9rem; margin-top: 40px; }
-
-        /* 메뉴판 전체 디자인 */
-        .navbar { background: #fff; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 1000; }
-        .nav-container { display: flex; flex-direction: column; align-items: center; padding: 10px 20px; max-width: 1200px; margin: 0 auto; }
-        .nav-logo { font-size: 1.5rem; font-weight: bold; color: #0A369D; text-decoration: none; margin-bottom: 10px; }
-        .nav-menu { display: flex; gap: 20px; }
-        .nav-item { text-decoration: none; color: #555; font-weight: 500; font-size: 1rem; padding: 5px 10px; }
-        .nav-item:hover { color: #0A369D; }
-        
-        /* PC 화면 일 때 메뉴판 배치 (가로로 일렬 정렬) */
-        @media (min-width: 768px) {
-            .nav-container { flex-direction: row; justify-content: space-between; }
-            .nav-logo { margin-bottom: 0; }
-        }
-        
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- 상단 메뉴판 영역 -->
