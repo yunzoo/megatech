@@ -1,131 +1,90 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(주)메가테크 | 스마트폰 카메라 모듈 부자재 전문</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- 상단 내비게이션 바 (스크롤 시 고정) -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">MEGATECH</a>
-            <div class="nav-menu">
-                <a href="#about" class="nav-item">회사소개</a>
-                <a href="#products" class="nav-item">제품소개</a>
-                <a href="#process" class="nav-item">공정 및 설비</a>
-                <a href="#contact" class="nav-item">고객센터</a>
-                <!-- 글로벌 타겟을 위한 다국어 버튼 -->
-                <a href="#" class="nav-lang">KR | EN</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- 대문 (히어로 섹션) -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>정밀 점착 기술의 기준을 만듭니다</h1>
-            <p>스마트폰 카메라 모듈용 특수 테이프 및 부자재 제조 전문 기업</p>
-        </div>
-    </header>
-
-    <!-- 1. 회사소개 섹션 -->
-    <section id="about" class="section">
-        <h2 class="section-title">회사소개</h2>
-        <div class="about-content">
-            <p>(주)메가테크는 끊임없는 연구개발과 혁신을 통해 고기능성 산업용 테이프 시장을 선도합니다.<br>
-            철저한 품질 관리와 신속한 영업 대응으로 고객의 가치 창조에 기여하는 신뢰할 수 있는 파트너입니다.</p>
-        </div>
-    </section>
-
-    <!-- 2. 제품소개 섹션 (그리드 카드 레이아웃) -->
-    <section id="products" class="section bg-light">
-        <h2 class="section-title">제품소개</h2>
-        <div class="grid-container">
-            <!-- 제품 카드 1 -->
-            <div class="card reveal">
-                <img src="images/product_pet.jpg" alt="I-type PET 필름" class="responsive-img">
-                <h3>I-type PET 필름</h3>
-                <p>우수한 내열성과 치수 안정성을 자랑하는 고기능성 기재</p>
-            </div>
-            <!-- 제품 카드 2 -->
-            <div class="card reveal">
-                <img src="images/product_silicone.jpg" alt="실리콘 점착 테이프" class="responsive-img">
-                <h3>실리콘 점착 테이프</h3>
-                <p>잔여물이 남지 않는 완벽한 리무버빌리티(Removability) 구현</p>
-            </div>
-            <!-- 제품 카드 3 -->
-            <div class="card reveal">
-                <img src="images/product_release.jpg" alt="특수 이형제" class="responsive-img">
-                <h3>특수 이형제 (Release Agent)</h3>
-                <p>초정밀 공정에 최적화된 균일한 박리력 제공</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. 공정 및 설비 섹션 -->
-    <section id="process" class="section">
-        <h2 class="section-title">공정 및 설비</h2>
-        <div class="grid-container">
-            <div class="card">
-                <img src="images/facility_cleanroom.jpg" alt="클린룸 설비" class="responsive-img">
-                <h3>최첨단 클린룸 라인</h3>
-                <p>이물질 유입을 원천 차단하는 고청정도 제조 환경 구축</p>
-            </div>
-            <div class="card">
-                <img src="images/facility_ai.jpg" alt="AI 비전 검사" class="responsive-img">
-                <h3>AI 결함 탐지 시스템</h3>
-                <p>산업용 카메라와 AI 모델을 연동한 실시간 불량(프린터/수분 라인) 검출</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. 고객센터 (오시는 길 및 문의) -->
-    <section id="contact" class="section bg-light">
-        <h2 class="section-title">고객센터</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>(주)메가테크 본사 및 공장</h3>
-                <p><strong>주소:</strong> 경기도 부천시</p>
-                <p><strong>전화:</strong> 032-XXX-XXXX</p>
-                <p><strong>팩스:</strong> 032-XXX-XXXX</p>
-                <p><strong>Email:</strong> info@megatech06.com</p>
-            </div>
-            <div class="global-contact">
-                <a href="#" class="btn-primary">WhatsApp 문의</a>
-                <a href="#" class="btn-secondary">카카오톡 문의</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 하단 푸터 -->
-    <footer>
-        <p>© 2026 MEGATECH Co., Ltd. All Rights Reserved.</p>
-    </footer>
+<section id="about" class="section">
     
-<script>
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal"); // reveal 클래스를 모두 찾음
+    <div class="about-container reveal">
+        <div class="ceo-profile">
+            <img src="images/ceo_photo.webp" alt="이윤경 대표이사" class="ceo-img">
+            <div class="ceo-titles">
+                <h3><strong>이윤경</strong> 대표이사</h3>
+                <ul>
+                    <li>현) 부천상공회의소 부회장</li>
+                    <li>현) 한국여성경제인협회 임원</li>
+                    <li>여성기업 확인 기업</li>
+                </ul>
+            </div>
+        </div>
+        <div class="ceo-message">
+            <span class="subtitle">CEO MESSAGE</span>
+            <h2>고객의 가치창조를 위한 품질 제일 주의</h2>
+            <p>(주)메가테크는 2006년 설립되어 무자재 전문 가공, 생산 업체로서 우수한 고품질 제품과 지속적 제품개발 및 철저한 품질관리, 신속한 영업 대응력으로 최고의 업체로 성장해 나가고 있습니다.</p>
+            <p>스마트폰 부자재 가공업계의 오랜 시간 축적된 노하우로 글로벌 테크 기업의 신뢰를 높이는 파트너가 되도록 최선을 다하겠습니다.</p>
+        </div>
+    </div>
 
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight; // 화면 높이
-        var elementTop = reveals[i].getBoundingClientRect().top; // 요소의 위치
-        var elementVisible = 150; // 요소가 화면 아래에서 150px 정도 보일 때 시작
+    <div class="timeline-wrap reveal">
+        <h3 class="part-title">회사연혁</h3>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="year">2026</div>
+                <div class="content">스마트 팩토리 공정 고도화 및 베트남 시장 진출</div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="year">2020</div>
+                <div class="content">제2공장 확장 및 클린룸 설비 증설</div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="year">2006</div>
+                <div class="content">(주)메가테크 법인 설립</div>
+            </div>
+        </div>
+    </div>
 
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active"); // 화면에 보이면 active 클래스 추가
-        }
-    }
-}
+    <div class="timeline-wrap reveal">
+        <h3 class="part-title">인증 및 수상</h3>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="year">인증</div>
+                <div class="content">ISO 9001 / ISO 14001 품질·환경 경영시스템 인증</div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="year">수상</div>
+                <div class="content">부천상공회의소 우수기업 표창</div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="year">특허</div>
+                <div class="content">점착 테이프 이형 기술 관련 특허 취득</div>
+            </div>
+        </div>
+    </div>
 
-// 스크롤 할 때마다 reveal 함수 실행
-window.addEventListener("scroll", reveal);
+    <div class="management-wrap reveal">
+        <h3 class="part-title">경영방침</h3>
+        <div class="management-grid">
+            <div class="policy-box">
+                <h4>품질경영목표</h4>
+                <p>공정 전수 검사를 통한 <strong>불량률 0%</strong> 도전 및 글로벌 표준 준수</p>
+            </div>
+            <div class="org-box">
+                <h4>조직도</h4>
+                <div class="org-tree">
+                    <span class="org-node leader">대표이사</span>
+                    <div class="org-branches">
+                        <span class="org-node">기업부설연구소 (R&D)</span>
+                        <span class="org-node">생산본부 (Production)</span>
+                        <span class="org-node">품질보증부 (QA)</span>
+                        <span class="org-node">영업부 (Sales)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-// 처음에 페이지 로드됐을 때도 한 번 실행 (이미 화면에 있는 요소 위해)
-reveal();
-</script>
-    
-</body>
-</html>
+    <div class="gallery-wrap reveal">
+        <h3 class="part-title">회사 둘러보기</h3>
+        <div class="gallery-grid">
+            <img src="images/factory_01.webp" alt="메가테크 본사 전경" class="gallery-img">
+            <img src="images/factory_cleanroom.webp" alt="최첨단 클린룸 라인" class="gallery-img">
+            <img src="images/factory_equipment.webp" alt="자동화 롤 설비" class="gallery-img">
+        </div>
+    </div>
+
+</section>
