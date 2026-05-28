@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(주)메가테크 | 스마트폰 카메라 모듈 부자재 전문</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -110,8 +111,7 @@
             </div>
 
         </section>
-        
-        </main>
+    </main>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -120,7 +120,6 @@
                 for (var i = 0; i < reveals.length; i++) {
                     var windowHeight = window.innerHeight;
                     var elementTop = reveals[i].getBoundingClientRect().top;
-                    // 요소가 화면 하단에서 100px 올라왔을 때 애니메이션 실행
                     var elementVisible = 100; 
                     
                     if (elementTop < windowHeight - elementVisible) {
@@ -128,10 +127,7 @@
                     }
                 }
             }
-            // 마우스 스크롤 이벤트에 함수 연결
             window.addEventListener("scroll", reveal);
-            
-            // 페이지가 처음 열렸을 때 화면에 보이는 요소들 바로 띄우기
             reveal(); 
         });
     </script>
