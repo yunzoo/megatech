@@ -28,10 +28,36 @@
         .content-box { border: 1px solid #e0e0e0; padding: 25px; border-radius: 8px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         .content-box h2 { color: #0A369D; margin-top: 0; border-bottom: 2px solid #0A369D; padding-bottom: 8px; }
         footer { background: #333; color: #ccc; text-align: center; padding: 20px; font-size: 0.9rem; margin-top: 40px; }
+
+        /* 메뉴판 전체 디자인 */
+        .navbar { background: #fff; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { display: flex; flex-direction: column; align-items: center; padding: 10px 20px; max-width: 1200px; margin: 0 auto; }
+        .nav-logo { font-size: 1.5rem; font-weight: bold; color: #0A369D; text-decoration: none; margin-bottom: 10px; }
+        .nav-menu { display: flex; gap: 20px; }
+        .nav-item { text-decoration: none; color: #555; font-weight: 500; font-size: 1rem; padding: 5px 10px; }
+        .nav-item:hover { color: #0A369D; }
+        
+        /* PC 화면 일 때 메뉴판 배치 (가로로 일렬 정렬) */
+        @media (min-width: 768px) {
+            .nav-container { flex-direction: row; justify-content: space-between; }
+            .nav-logo { margin-bottom: 0; }
+        }
+        
     </style>
 </head>
 <body>
-
+    <!-- 상단 메뉴판 영역 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">MEGATECH</a>
+            <div class="nav-menu">
+                <a href="#company" class="nav-item">회사소개</a>
+                <a href="#products" class="nav-item">제품안내</a>
+                <a href="#location" class="nav-item">오시는길</a>
+            </div>
+        </div>
+    </nav>
+    
     <div class="hero">
         <h1>MEGATECH</h1>
         <p>스마트폰 카메라 모듈용 특수 테이프 및 부자재 전문 제조</p>
