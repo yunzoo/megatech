@@ -1,72 +1,168 @@
 /* ==========================================
-    1. 기본 설정 및 내비게이션 (공통)
-    ========================================== */
+   1. 디자인 토큰 및 공통 초기화
+   ========================================== */
+:root {
+    --primary: #0050a0;
+    --primary-dark: #003670;
+    --bg-light: #fdfdfd;
+    --bg-alt: #f4f7f9;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border-color: #eaeaea;
+    --max-width: 1200px;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: 'NanumSquare', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; background-color: #fdfdfd; }
-
-.navbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #ddd; z-index: 1000; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-.nav-logo { font-size: 1.5rem; font-weight: 800; color: #0050a0; text-decoration: none; }
-.nav-menu { display: flex; gap: 30px; }
-.nav-item { text-decoration: none; color: #555; font-weight: 600; font-size: 1.05rem; transition: color 0.3s; }
-.nav-item:hover { color: #0050a0; }
+body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); background-color: var(--bg-light); -webkit-font-smoothing: antialiased; }
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+.section { padding: 90px 0; }
+.section.alt-bg { background-color: var(--bg-alt); }
+.section-subtitle { display: block; font-size: 0.85rem; font-weight: 800; color: var(--primary); letter-spacing: 2px; text-align: center; margin-bottom: 5px; }
+.section-title { font-size: 2.2rem; text-align: center; margin-bottom: 50px; font-weight: 800; color: #111; }
+.sub-title { font-size: 1.4rem; color: var(--primary); font-weight: 700; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); }
 
 /* ==========================================
-    2. 회사소개 섹션 스타일
-    ========================================== */
-.section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; overflow: hidden; }
-.part-title { font-size: 1.8rem; color: #0050a0; border-bottom: 2px solid #eee; padding-bottom: 10px; margin: 80px 0 30px 0; }
+   2. 내비게이션 바 (Sticky Navbar)
+   ========================================== */
+.navbar { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 2000; padding: 12px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+.logo-img { height: 38px; width: auto; display: block; }
+.nav-menu { display: flex; gap: 35px; }
+.nav-link { text-decoration: none; color: #444; font-weight: 700; font-size: 1.05rem; transition: color 0.25s ease; }
+.nav-link:hover { color: var(--primary); }
+.menu-toggle { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--primary); }
 
-/* 2-1. CEO 프로필 */
-.about-container { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 50px; }
-.ceo-profile { flex: 1; min-width: 280px; text-align: center; background: #fff; padding: 30px 20px; border-radius: 10px; border-top: 5px solid #0050a0; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-.ceo-img { width: 100%; max-width: 180px; border-radius: 50%; margin-bottom: 20px; border: 3px solid #eee; }
-.ceo-titles ul { list-style: none; margin-top: 15px; font-size: 0.95rem; color: #555; }
-.ceo-titles li { margin-bottom: 5px; }
+/* ==========================================
+   3. ① 회사소개 섹션 (About UI)
+   ========================================== */
+.about-ceo { display: flex; gap: 60px; align-items: flex-start; margin-bottom: 70px; }
+.ceo-message { flex: 2; }
+.ceo-message h2 { font-size: 2.1rem; line-height: 1.4; color: #111; margin: 10px 0 25px 0; }
+.ceo-message p { line-height: 1.8; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; }
+.ceo-message .lead { font-size: 1.15rem; color: #333; font-weight: 600; }
+.ceo-profile { flex: 1; min-width: 290px; background: #fff; padding: 35px 25px; border-radius: 12px; border-top: 5px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+.ceo-profile h3 { font-size: 1.3rem; margin-bottom: 15px; }
+.ceo-profile ul { list-style: none; }
+.ceo-profile li { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 8px; position: relative; padding-left: 15px; }
+.ceo-profile li::before { content: '•'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
 
-.ceo-message { flex: 2; padding-top: 20px; }
-.subtitle { color: #888; font-weight: 800; letter-spacing: 2px; font-size: 0.85rem; }
-.ceo-message h2 { font-size: 2rem; margin: 15px 0 25px 0; line-height: 1.4; color: #222; }
-.ceo-message p { line-height: 1.8; margin-bottom: 20px; font-size: 1.1rem; color: #444; }
+/* 1-2 & 1-3 세로 타임라인 스크롤 이펙트 영역 */
+.history-certi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 70px; }
+.scroll-timeline { max-height: 380px; overflow-y: auto; padding-right: 15px; border-left: 3px solid var(--primary); padding-left: 30px; }
+.timeline-item { position: relative; margin-bottom: 35px; }
+.timeline-item::before { content: ''; position: absolute; left: -39px; top: 4px; width: 12px; height: 12px; background: #fff; border: 3px solid var(--primary); border-radius: 50%; }
+.t-year { font-weight: 800; font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; }
+.t-desc { font-size: 1rem; color: #444; line-height: 1.5; }
+.certi-imgs { display: flex; gap: 10px; margin-top: 12px; }
+.certi-imgs img { height: 70px; width: auto; object-fit: contain; border: 1px solid #ddd; border-radius: 4px; background: #fff; }
 
-/* 2-2 & 2-3. 타임라인 (연혁 및 인증) */
-.timeline { border-left: 3px solid #0050a0; margin-left: 20px; padding-left: 40px; }
-.timeline-item { position: relative; margin-bottom: 40px; }
-.timeline-item::before { content: ''; position: absolute; left: -49px; top: 0; width: 16px; height: 16px; background: #fff; border: 4px solid #0050a0; border-radius: 50%; }
-.year { font-weight: 800; font-size: 1.3rem; color: #0050a0; margin-bottom: 8px; }
-.content { background: #f8f9fa; padding: 20px 25px; border-radius: 8px; color: #333; font-size: 1.05rem; box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
+/* 스크롤바 커스텀 */
+.scroll-timeline::-webkit-scrollbar { width: 4px; }
+.scroll-timeline::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
 
-/* 2-4. 경영방침 (그리드) */
-.management-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-.policy-box, .org-box { background: #fff; border: 1px solid #eaeaea; border-radius: 10px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.04); }
-.policy-box h4, .org-box h4 { margin-bottom: 20px; color: #0050a0; font-size: 1.3rem; }
-
-/* 미니멀 조직도 */
+/* 1-4. 경영방침 및 조직도 */
+.management-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 70px; }
+.policy-card, .org-card { background: #fff; border: 1px solid #eee; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+.policy-content .highlight { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 15px; }
+.policy-content ul { list-style-position: inside; color: var(--text-muted); line-height: 1.8; }
 .org-tree { text-align: center; }
-.org-node { display: inline-block; padding: 12px 20px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; font-size: 0.95rem; font-weight: 600; margin: 5px; width: 100%; box-sizing: border-box; }
-.org-node.leader { background: #0050a0; color: #fff; border: none; max-width: 250px; margin-bottom: 20px; }
-.org-branches { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.org-node { display: inline-block; padding: 10px 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 6px; font-size: 0.95rem; font-weight: 600; }
+.org-node.leader { background: var(--primary); color: #fff; border: none; width: 150px; margin-bottom: 20px; }
+.org-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 
-/* 2-5. 갤러리 */
-.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.gallery-img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; transition: transform 0.3s ease, box-shadow 0.3s ease; background-color: #eee; }
-.gallery-img:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+/* 1-5. 갤러리 탭 UI */
+.tab-buttons { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+.tab-btn { padding: 10px 25px; font-size: 1rem; font-weight: 700; border: 1px solid #ddd; background: #fff; border-radius: 30px; cursor: pointer; transition: all 0.25s; }
+.tab-btn.active, .tab-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.gallery-grid { display: none; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.gallery-grid.active { display: grid; }
+.gallery-item { position: relative; border-radius: 10px; overflow: hidden; height: 200px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.gallery-item:hover img { transform: scale(1.06); }
+.img-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); color: #fff; font-size: 0.85rem; padding: 6px; text-align: center; }
 
 /* ==========================================
-    3. 스크롤 애니메이션 (토스 스타일)
-    ========================================== */
-.reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+   4. ② 제품소개 섹션 (5단 반응형 그리드)
+   ========================================== */
+.product-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+.product-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid #f0f0f0; }
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
+.card-img-wrap { width: 100%; height: 180px; background: #eee; overflow: hidden; }
+.card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.card-body { padding: 20px 15px; text-align: center; }
+.card-body h4 { font-size: 1.15rem; color: #111; margin-bottom: 10px; font-weight: 700; }
+.card-body p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
 
 /* ==========================================
-    4. 모바일 반응형 처리
-    ========================================== */
-@media (max-width: 768px) {
-    .nav-menu { display: none; }
-    .about-container { flex-direction: column; }
-    .management-grid { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr; }
-    .org-branches { grid-template-columns: 1fr; }
-    .gallery-img { height: auto; aspect-ratio: 16/9; }
+   5. ③ 공정 및 설비 섹션 (Flow & Table)
+   ========================================== */
+.process-flow-wrap { margin-bottom: 60px; }
+.process-flow { display: flex; justify-content: space-between; align-items: center; background: #f8f9fa; padding: 40px 30px; border-radius: 12px; border: 1px solid #eee; }
+.process-step { flex: 1; text-align: center; padding: 0 10px; }
+.step-num { font-size: 2rem; font-weight: 800; color: var(--primary); opacity: 0.3; margin-bottom: 10px; }
+.process-step h4 { font-size: 1.2rem; margin-bottom: 10px; color: #222; }
+.process-step p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; }
+.process-arrow { font-size: 1.5rem; color: #ccc; padding: 0 15px; }
+
+.equipment-content { display: flex; gap: 40px; align-items: center; }
+.equ-table-wrap { flex: 2; overflow-x: auto; }
+.equ-table { width: 100%; border-collapse: collapse; text-align: left; background: #fff; border-radius: 8px; overflow: hidden; }
+.equ-table th, .equ-table td { padding: 18px; border-bottom: 1px solid var(--border-color); font-size: 1rem; }
+.equ-table th { background: var(--primary); color: #fff; font-weight: 700; }
+.equ-table td.cate { font-weight: 700; color: var(--primary); }
+.equ-preview { flex: 1; min-width: 250px; text-align: center; }
+.equ-img { width: 100%; max-width: 320px; border-radius: 10px; border: 1px solid #ddd; box-shadow: 0 4px 10px rgba(0,0,0,0.04); }
+
+/* ==========================================
+   6. ④ 고객문의 섹션 및 푸터
+   ========================================== */
+.contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; }
+.info-block { margin-bottom: 30px; }
+.info-block h4 { font-size: 1.25rem; color: #111; margin-bottom: 12px; border-left: 4px solid var(--primary); padding-left: 10px; }
+.info-block p { font-size: 1.05rem; color: #444; margin-bottom: 6px; }
+.contact-channels h4 { font-size: 1.25rem; margin-bottom: 20px; color: #111; }
+.channel-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.c-btn { display: flex; align-items: center; justify-content: center; padding: 15px; text-decoration: none; color: #fff; border-radius: 8px; font-weight: 700; transition: opacity 0.2s; font-size: 1rem; }
+.c-btn:hover { opacity: 0.9; }
+.c-btn.mail { background: #333; }
+.c-btn.zalo { background: #0068ff; }
+.c-btn.whatsapp { background: #25d366; }
+.c-btn.blog { background: #03cf5d; }
+
+.footer { background: #222; color: #888; padding: 30px 0; text-align: center; font-size: 0.9rem; border-top: 1px solid #333; }
+
+/* ==========================================
+   📱 7. 스마트폰/태블릿 반응형 미디어쿼리 (Breakpoints)
+   ========================================== */
+@media (max-width: 1024px) {
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+@media (max-width: 768px) {
+    .section { padding: 60px 0; }
+    .section-title { font-size: 1.8rem; margin-bottom: 35px; }
+    .about-ceo { flex-direction: column; gap: 30px; }
+    .history-certi-grid { grid-template-columns: 1fr; gap: 30px; }
+    .management-grid { grid-template-columns: 1fr; }
+    .org-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .product-grid { grid-template-columns: 1fr 1fr; }
+    .process-flow { flex-direction: column; gap: 20px; }
+    .process-arrow { transform: rotate(90deg); padding: 5px 0; }
+    .equipment-content { flex-direction: column; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    
+    /* 모바일 햄버거 토글 스타일 */
+    .menu-toggle { display: block; }
+    .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; gap: 0; border-bottom: 1px solid var(--border-color); text-align: center; }
+    .nav-menu.active { display: flex; }
+    .nav-link { display: block; padding: 15px 0; border-bottom: 1px solid #f9f9f9; }
+}
+
+/* ==========================================
+   ✨ 8. 토스/애플 스타일 애니메이션 클래스
+   ========================================== */
+.reveal { opacity: 0; transform: translateY(40px); transition: all 0.75s cubic-bezier(0.215, 0.61, 0.355, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
