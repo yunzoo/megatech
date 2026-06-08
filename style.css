@@ -23,16 +23,20 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .sub-title { font-size: 1.4rem; color: var(--primary); font-weight: 700; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); }
 
 /* ==========================================
-   2. 내비게이션 바 (상단 바 레이아웃 정상화)
+   2. 내비게이션 바 (크기 및 높이 강제 제한)
    ========================================== */
 .navbar { 
     position: sticky; 
     top: 0; 
+    left: 0;
+    width: 100%;
+    height: 70px; /* 🔥 핵심 1: 메뉴바 전체 높이를 딱 70픽셀로 못 박아둡니다. */
     background: rgba(255, 255, 255, 0.95); 
     backdrop-filter: blur(10px); 
     border-bottom: 1px solid var(--border-color); 
     z-index: 2000; 
-    padding: 10px 0; /* 상하 여백을 살짝 줄여 슬림하게 변경 */
+    display: flex;
+    align-items: center; /* 내부 요소들을 세로 중앙 정렬 */
     box-shadow: 0 2px 10px rgba(0,0,0,0.02); 
 }
 
@@ -40,28 +44,33 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
+    width: 100%;
     max-width: var(--max-width); 
     margin: 0 auto; 
     padding: 0 20px; 
 }
 
-/* 🔥 핵심: 로고 링크 박스와 이미지 크기 제어 */
+/* 🔥 핵심 2: 로고가 들어가는 링크 영역의 크기 제한 */
 .nav-logo {
     display: flex;
     align-items: center;
-    max-width: 220px; /* 로고가 차지할 최대 가로 길이를 제한 (중요!) */
+    height: 45px;    /* 메뉴바 높이(70px)보다 작게 설정하여 여백 확보 */
+    max-width: 200px; /* 가로 길이 제한 */
 }
 
+/* 🔥 핵심 3: 로고 이미지 자체가 부모 박스를 절대 넘어가지 못하게 방어 */
 .logo-img { 
-    width: 100%;      /* 부모 박스(nav-logo) 크기에 맞게 채우기 */
-    height: auto;     /* 가로 세로 비율 유지 */
+    width: auto;
+    height: 100%;     /* 부모(nav-logo)의 높이인 45px에 무조건 맞춤 */
+    max-width: 100%;
+    object-fit: contain; /* 이미지 비율이 깨지거나 찌그러지지 않게 방지 */
     display: block; 
 }
 
 .nav-menu { 
     display: flex; 
     gap: 35px; 
-    align-items: center; /* 메뉴 글자들을 세로 중앙 정렬 */
+    align-items: center; 
 }
 
 .nav-link { 
@@ -70,21 +79,16 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
     font-weight: 700; 
     font-size: 1.05rem; 
     transition: color 0.25s ease; 
-    white-space: nowrap; /* 글자가 밑으로 줄바꿈되는 현상 방지 */
+    white-space: nowrap; 
 }
 
 .nav-link:hover { 
     color: var(--primary); 
 }
 
-/* 모바일 햄버거 버튼 (기본 PC 화면에서는 안 보여야 정상) */
+/* PC 화면에서는 햄버거 버튼 숨김 */
 .menu-toggle { 
     display: none; 
-    background: none; 
-    border: none; 
-    font-size: 1.6rem; 
-    cursor: pointer; 
-    color: var(--primary); 
 }
 /* ==========================================
    3. ① 회사소개 섹션 (About UI)
