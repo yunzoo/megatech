@@ -23,9 +23,6 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .sub-title { font-size: 1.4rem; color: var(--primary); font-weight: 700; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); }
 
 /* ==========================================
-   2. 내비게이션 바 (Sticky Navbar)
-   ========================================== */
-/* ==========================================
    2. 내비게이션 바 (상단 바 레이아웃 정상화)
    ========================================== */
 .navbar { 
