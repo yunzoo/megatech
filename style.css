@@ -54,8 +54,8 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .nav-logo {
     display: flex;
     align-items: center;
-    height: 100px;    /* 메뉴바 높이(70px)보다 작게 설정하여 여백 확보 */
-    max-width: 500px; /* 가로 길이 제한 */
+    height: 45px;    /* 메뉴바 높이(70px)보다 작게 설정하여 여백 확보 */
+    max-width: 200px; /* 가로 길이 제한 */
 }
 
 /* 🔥 핵심 3: 로고 이미지 자체가 부모 박스를 절대 넘어가지 못하게 방어 */
