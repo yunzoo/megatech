@@ -49,6 +49,81 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
 .img-caption { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: #fff; text-align: center; padding: 5px 0; font-size: 0.85rem; }
 
+/* ==========================================
+   인증 및 수상 (우측 패널) 신규 디자인
+   ========================================== */
+
+/* 상단 설명 박스 */
+.certi-summary-box {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa; /* 연한 회색 배경 */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+.trophy-icon {
+    font-size: 3.5rem;
+    margin-right: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.certi-text-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.certi-text-list li {
+    font-size: 0.88rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 12px;
+    word-break: keep-all; /* 텍스트 깔끔하게 줄바꿈 */
+}
+
+/* 텍스트 앞의 작은 동그라미(블릿) 기호 */
+.certi-text-list li::before {
+    content: '◦';
+    position: absolute;
+    left: 0;
+    color: #888;
+    font-weight: bold;
+}
+
+/* 하단 사진 스크롤 그리드 (한 줄에 3장씩) */
+.certi-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 12px;
+    max-height: 380px; /* 왼쪽 연혁 스크롤 박스 높이와 동일하게 맞춤 */
+    overflow-y: auto;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.certi-photo-grid img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    transition: transform 0.2s;
+}
+
+/* 사진에 마우스 올렸을 때 살짝 커지는 효과 */
+.certi-photo-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* 갤러리 영역 스크롤바 디자인 */
+.certi-photo-grid::-webkit-scrollbar { width: 5px; }
+.certi-photo-grid::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+
 /* 협력사 */
 .client-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; align-items: center; }
 .client-logo { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 20px; display: flex; justify-content: center; align-items: center; height: 80px; transition: 0.3s; }
