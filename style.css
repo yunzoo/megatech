@@ -25,14 +25,70 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 /* ==========================================
    2. 내비게이션 바 (Sticky Navbar)
    ========================================== */
-.navbar { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 2000; padding: 12px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
-.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
-.logo-img { height: 38px; width: auto; display: block; }
-.nav-menu { display: flex; gap: 35px; }
-.nav-link { text-decoration: none; color: #444; font-weight: 700; font-size: 1.05rem; transition: color 0.25s ease; }
-.nav-link:hover { color: var(--primary); }
-.menu-toggle { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--primary); }
+/* ==========================================
+   2. 내비게이션 바 (상단 바 레이아웃 정상화)
+   ========================================== */
+.navbar { 
+    position: sticky; 
+    top: 0; 
+    background: rgba(255, 255, 255, 0.95); 
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid var(--border-color); 
+    z-index: 2000; 
+    padding: 10px 0; /* 상하 여백을 살짝 줄여 슬림하게 변경 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02); 
+}
 
+.nav-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: var(--max-width); 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* 🔥 핵심: 로고 링크 박스와 이미지 크기 제어 */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    max-width: 220px; /* 로고가 차지할 최대 가로 길이를 제한 (중요!) */
+}
+
+.logo-img { 
+    width: 100%;      /* 부모 박스(nav-logo) 크기에 맞게 채우기 */
+    height: auto;     /* 가로 세로 비율 유지 */
+    display: block; 
+}
+
+.nav-menu { 
+    display: flex; 
+    gap: 35px; 
+    align-items: center; /* 메뉴 글자들을 세로 중앙 정렬 */
+}
+
+.nav-link { 
+    text-decoration: none; 
+    color: #444; 
+    font-weight: 700; 
+    font-size: 1.05rem; 
+    transition: color 0.25s ease; 
+    white-space: nowrap; /* 글자가 밑으로 줄바꿈되는 현상 방지 */
+}
+
+.nav-link:hover { 
+    color: var(--primary); 
+}
+
+/* 모바일 햄버거 버튼 (기본 PC 화면에서는 안 보여야 정상) */
+.menu-toggle { 
+    display: none; 
+    background: none; 
+    border: none; 
+    font-size: 1.6rem; 
+    cursor: pointer; 
+    color: var(--primary); 
+}
 /* ==========================================
    3. ① 회사소개 섹션 (About UI)
    ========================================== */
