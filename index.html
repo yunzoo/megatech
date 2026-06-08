@@ -4,132 +4,302 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(주)메가테크 | 스마트폰 카메라 모듈 부자재 전문</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspice/NanumSquare@1.0/nanumsquare.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">MEGATECH</a>
+            <a href="#" class="nav-logo">
+                <img src="img/logo_wide.png" alt="(주)메가테크" class="logo-img">
+            </a>
             <div class="nav-menu">
-                <a href="#about" class="nav-item">회사소개</a>
-                <a href="#products" class="nav-item">제품소개</a>
-                <a href="#process" class="nav-item">공정 및 설비</a>
-                <a href="#contact" class="nav-item">고객문의</a>
+                <a href="#about" class="nav-link">회사소개</a>
+                <a href="#products" class="nav-link">제품소개</a>
+                <a href="#infrastructure" class="nav-link">공정 및 설비</a>
+                <a href="#contact" class="nav-link">고객문의</a>
             </div>
+            <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
         </div>
     </nav>
 
     <main>
         <section id="about" class="section">
-            
-            <div class="about-container reveal">
-                <div class="ceo-profile">
-                    <img src="https://via.placeholder.com/180" alt="이윤경 대표이사" class="ceo-img">
-                    <div class="ceo-titles">
-                        <h3><strong>이윤경</strong> 대표이사</h3>
-                        <ul>
-                            <li>현) 부천상공회의소 부회장</li>
-                            <li>현) 한국여성경제인협회 임원</li>
-                            <li>여성기업 확인 기업</li>
-                        </ul>
+            <div class="container">
+                <div class="about-ceo reveal">
+                    <div class="ceo-message">
+                        <span class="section-subtitle">CEO MESSAGE</span>
+                        <h2>고객의 가치창조를 위한 품질 제일 주의</h2>
+                        <p class="lead">(주)메가테크는 2006년 설립 이래 스마트폰 카메라 모듈 부자재 및 초정밀 기능성 점착 테이프 가공 분야에서 글로벌 테크 기업들의 신뢰를 받는 파트너로 성장해 왔습니다.</p>
+                        <p>철저한 클린룸 관리와 품질 보증 시스템을 바탕으로, 급변하는 IT 부품 시장을 선도하는 고품질 제품만을 생산할 것을 약속드립니다.</p>
+                    </div>
+                    <div class="ceo-profile">
+                        <div class="titles">
+                            <h3><strong>이윤경</strong> 대표이사</h3>
+                            <ul>
+                                <li>현) 부천상공회의소 부회장</li>
+                                <li>현) 한국여성경제인협회 임원</li>
+                                <li>여성기업 확인 기업</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="ceo-message">
-                    <span class="subtitle">CEO MESSAGE</span>
-                    <h2>고객의 가치창조를 위한<br>품질 제일 주의</h2>
-                    <p>(주)메가테크는 2006년 설립되어 무자재 전문 가공, 생산 업체로서 우수한 고품질 제품과 지속적 제품개발 및 철저한 품질관리, 신속한 영업 대응력으로 최고의 업체로 성장해 나가고 있습니다.</p>
-                    <p>스마트폰 부자재 가공업계의 오랜 시간 축적된 노하우로 글로벌 테크 기업의 신뢰를 높이는 파트너가 되도록 최선을 다하겠습니다.</p>
-                </div>
-            </div>
 
-            <div class="timeline-wrap reveal">
-                <h3 class="part-title">회사연혁</h3>
-                <div class="timeline">
-                    <div class="timeline-item reveal">
-                        <div class="year">2026</div>
-                        <div class="content">스마트 팩토리 공정 고도화 및 글로벌 시장 진출 가속화</div>
+                <div class="history-certi-grid">
+                    <div class="timeline-box reveal">
+                        <h3 class="sub-title">회사연혁</h3>
+                        <div class="scroll-timeline">
+                            <div class="timeline-item">
+                                <div class="t-year">2026</div>
+                                <div class="t-desc">스마트 팩토리 공정 고도화 및 베트남 시장 진출 확대</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="t-year">2020</div>
+                                <div class="t-desc">제2공장 확장 및 최첨단 클린룸 설비 증설</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="t-year">2006</div>
+                                <div class="t-desc">(주)메가테크 법인 설립</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="timeline-item reveal">
-                        <div class="year">2020</div>
-                        <div class="content">제2공장 확장 및 최첨단 클린룸 설비 증설</div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="year">2006</div>
-                        <div class="content">(주)메가테크 법인 설립</div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="timeline-wrap reveal">
-                <h3 class="part-title">인증 및 수상</h3>
-                <div class="timeline">
-                    <div class="timeline-item reveal">
-                        <div class="year">인증</div>
-                        <div class="content">ISO 9001 / ISO 14001 품질·환경 경영시스템 인증 획득</div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="year">수상</div>
-                        <div class="content">부천상공회의소 우수기업 표창</div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="year">특허</div>
-                        <div class="content">점착 테이프 이형 기술 관련 특허 취득</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="management-wrap reveal">
-                <h3 class="part-title">경영방침</h3>
-                <div class="management-grid">
-                    <div class="policy-box reveal">
-                        <h4>품질경영목표</h4>
-                        <p>공정 전수 검사를 통한 <strong>불량률 0%</strong> 도전<br>글로벌 테크 표준 규격 완벽 준수</p>
-                    </div>
-                    <div class="org-box reveal">
-                        <h4>조직도</h4>
-                        <div class="org-tree">
-                            <span class="org-node leader">대표이사</span>
-                            <div class="org-branches">
-                                <span class="org-node">기업부설연구소 (R&D)</span>
-                                <span class="org-node">생산본부 (Production)</span>
-                                <span class="org-node">품질보증부 (QA)</span>
-                                <span class="org-node">영업부 (Sales)</span>
+                    <div class="timeline-box reveal">
+                        <h3 class="sub-title">인증 및 수상</h3>
+                        <div class="scroll-timeline certi-timeline">
+                            <div class="timeline-item">
+                                <div class="t-year">ISO 인증</div>
+                                <div class="t-desc">ISO 9001 / ISO 14001 품질·환경 경영시스템 인증</div>
+                                <div class="certi-imgs">
+                                    <img src="img/certi01.png" alt="인증서">
+                                    <img src="img/certi02.png" alt="인증서">
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="t-year">우수기업</div>
+                                <div class="t-desc">부천상공회의소 우수기업 표창 및 여성기업 인증</div>
+                                <div class="certi-imgs">
+                                    <img src="img/certi03.png" alt="인증서">
+                                    <img src="img/certi04.png" alt="인증서">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="gallery-wrap reveal">
-                <h3 class="part-title">회사 둘러보기</h3>
-                <div class="gallery-grid">
-                    <img src="https://via.placeholder.com/400x300?text=Factory+01" alt="본사 전경" class="gallery-img reveal">
-                    <img src="https://via.placeholder.com/400x300?text=Clean+Room" alt="클린룸 라인" class="gallery-img reveal">
-                    <img src="https://via.placeholder.com/400x300?text=Equipment" alt="자동화 설비" class="gallery-img reveal">
+                <div class="management-grid reveal">
+                    <div class="policy-card">
+                        <h3 class="sub-title">품질경영목표</h3>
+                        <div class="policy-content">
+                            <p class="highlight">"공정 전수 검사를 통한 불량률 0% 도전"</p>
+                            <ul>
+                                <li>고객 불량률 Zero화 달성</li>
+                                <li>글로벌 테크 표준 규격 규정 완벽 준수</li>
+                                <li>지속적인 R&D 투자를 통한 독자 기술 확보</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="org-card">
+                        <h3 class="sub-title">조직도</h3>
+                        <div class="org-tree">
+                            <div class="org-node leader">대표이사</div>
+                            <div class="org-row">
+                                <div class="org-node">기업부설연구소</div>
+                                <div class="org-node">생산본부</div>
+                                <div class="org-node">품질보증부</div>
+                                <div class="org-node">영업부</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-section reveal">
+                    <h3 class="sub-title">회사 둘러보기</h3>
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="hq">본사 (HQ)</button>
+                        <button class="tab-btn" data-tab="vn">베트남 지사 (VN)</button>
+                    </div>
+                    
+                    <div id="gallery-hq" class="gallery-grid active">
+                        <div class="gallery-item"><img src="img/about_hq_exterior.jpg" alt="본사 외관"><span class="img-caption">본사 외관</span></div>
+                        <div class="gallery-item"><img src="img/about_hq_entrance.jpg" alt="본사 입구"><span class="img-caption">본사 입구</span></div>
+                        <div class="gallery-item"><img src="img/about_hq_production.jpg" alt="생산 라인"><span class="img-caption">1층 생산라인</span></div>
+                        <div class="gallery-item"><img src="img/about_hq_office.jpg" alt="회의실"><span class="img-caption">대회의실</span></div>
+                        <div class="gallery-item"><img src="img/about_hq_2f_1.jpg" alt="2층 전경"><span class="img-caption">2층 공정라인</span></div>
+                    </div>
+                    
+                    <div id="gallery-vn" class="gallery-grid">
+                        <div class="gallery-item"><img src="img/about_vn_exterior.jpg" alt="베트남 외관"><span class="img-caption">지사 외관</span></div>
+                        <div class="gallery-item"><img src="img/about_vn_production.png" alt="베트남 생산"><span class="img-caption">생산 라인</span></div>
+                        <div class="gallery-item"><img src="img/about_vn_qa.png" alt="베트남 품질"><span class="img-caption">품질 보증실</span></div>
+                        <div class="gallery-item"><img src="img/about_vn_materials.png" alt="베트남 자재"><span class="img-caption">자재 창고</span></div>
+                    </div>
                 </div>
             </div>
+        </section>
 
+        <section id="products" class="section alt-bg">
+            <div class="container">
+                <span class="section-subtitle">PRODUCTS</span>
+                <h2 class="section-title">주요 제품군</h2>
+                
+                <div class="product-grid reveal">
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="img/prod_insulation_1.jpg" alt="Insulation Tape">
+                        </div>
+                        <div class="card-body">
+                            <h4>Insulation Tape</h4>
+                            <p>카메라 모듈 내부 고정 및 초정밀 절연성 점착 테이프</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="img/prod_poron_1.jpg" alt="Ring Poron Tape">
+                        </div>
+                        <div class="card-body">
+                            <h4>Ring Poron Tape</h4>
+                            <p>충격 흡수 및 미세 먼지 유입을 차단하는 고기능성 다이컷 테이프</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="img/prod_process_1.jpg" alt="공정용 테이프">
+                        </div>
+                        <div class="card-body">
+                            <h4>공정용 Tape</h4>
+                            <p>제조 및 조립 공정 중 표면 보호 및 이물 탈착용 테이프</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="img/prod_shipping_1.jpg" alt="출하용 테이프">
+                        </div>
+                        <div class="card-body">
+                            <h4>출하용 Tape</h4>
+                            <p>최종 완제품 운송 시 스크래치와 변형을 막아주는 약점착 보호 필름</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="card-img-wrap">
+                            <img src="img/prod_roll_1.jpg" alt="자동화 롤타입">
+                        </div>
+                        <div class="card-body">
+                            <h4>자동화 롤타입</h4>
+                            <p>대량 생산 라인 피딩 장비에 최적화된 연속 롤 가공 부자재</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="infrastructure" class="section">
+            <div class="container">
+                <span class="section-subtitle">INFRASTRUCTURE</span>
+                <h2 class="section-title">제조 공정 및 핵심 설비</h2>
+
+                <div class="process-flow-wrap reveal">
+                    <h3 class="sub-title">핵심 제조 공정</h3>
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <div class="step-num">01</div>
+                            <h4>원단 입고 검사</h4>
+                            <p>점착 원단 표면 이물 및 두께 균일도 전수 검사</p>
+                        </div>
+                        <div class="process-arrow">➔</div>
+                        <div class="process-step">
+                            <div class="step-num">02</div>
+                            <h4>정밀 슬리팅 / 타목 생산</h4>
+                            <p>클린룸 내 자동화 설비를 통한 초정밀 롤 절단 및 가공</p>
+                        </div>
+                        <div class="process-arrow">➔</div>
+                        <div class="process-step">
+                            <div class="step-num">03</div>
+                            <h4>AI 비전 검사 및 출하</h4>
+                            <p>머신러닝 비전 검사기를 통한 불량 유무 판정 후 패킹</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-section reveal">
+                    <h3 class="sub-title">주요 설비 인프라</h3>
+                    <div class="equipment-content">
+                        <div class="equ-table-wrap">
+                            <table class="equ-table">
+                                <thead>
+                                    <tr>
+                                        <th>장비 분류</th>
+                                        <th>핵심 보유 설비</th>
+                                        <th>주요 사양 및 기술 특징</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cate">생산 설비</td>
+                                        <td>고속 정밀 슬리터 (Slitter)</td>
+                                        <td>마이크로 단위 폭 제어, 이형지 텐션 자동 밸런싱 시스템</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cate">생산 설비</td>
+                                        <td>자동화 롤 피딩 타목기</td>
+                                        <td>스마트폰 카메라 모듈용 극소형 패턴 연속 다이컷팅 기술</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cate">검사 장비</td>
+                                        <td>AI 인라인 비전 검사기</td>
+                                        <td>실시간 표면 기포, 수분선, 인쇄선 패턴 매칭 디텍션 알고리즘</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="equ-preview">
+                            <img src="img/equ_ins_1.png" alt="검사장비 실물" class="equ-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section alt-bg">
+            <div class="container">
+                <span class="section-subtitle">CONTACT US</span>
+                <h2 class="section-title">글로벌 비즈니스 문의</h2>
+
+                <div class="contact-grid reveal">
+                    <div class="contact-info">
+                        <div class="info-block">
+                            <h4>한국 본사 (HQ)</h4>
+                            <p>📍 경기도 부천시 신흥로 (부천상공회의소 인근)</p>
+                            <p>📞 TEL : 032-XXX-XXXX | 📠 FAX : 032-XXX-XXXX</p>
+                        </div>
+                        <div class="info-block">
+                            <h4>베트남 지사 (VN)</h4>
+                            <p>📍 베트남 현지 주요 테크 산업단지 내 위치</p>
+                            <p>📧 Email : sales@megatech06.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-channels">
+                        <h4>실시간 상담 및 기업 블로그</h4>
+                        <div class="channel-buttons">
+                            <a href="mailto:sales@megatech06.com" class="c-btn mail">이메일 문의하기</a>
+                            <a href="#" class="c-btn zalo" target="_blank">Zalo 상담 (베트남)</a>
+                            <a href="#" class="c-btn whatsapp" target="_blank">WhatsApp</a>
+                            <a href="https://blog.naver.com" class="c-btn blog" target="_blank">공식 네이버 블로그</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            function reveal() {
-                var reveals = document.querySelectorAll(".reveal");
-                for (var i = 0; i < reveals.length; i++) {
-                    var windowHeight = window.innerHeight;
-                    var elementTop = reveals[i].getBoundingClientRect().top;
-                    var elementVisible = 100; 
-                    
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveals[i].classList.add("active");
-                    }
-                }
-            }
-            window.addEventListener("scroll", reveal);
-            reveal(); 
-        });
-    </script>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 (주)메가테크. All Rights Reserved. 본 사이트는 스마트폰 및 PC 최적화 반응형 웹입니다.</p>
+        </div>
+    </footer class="footer">
+
+    <script src="script.js"></script>
 </body>
 </html>
