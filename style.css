@@ -216,8 +216,8 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .client-logo:nth-child(2) img { transform: scale(3.5); } /* 엠씨넥스 */
 .client-logo:nth-child(2):hover img { transform: scale(3.55); }
 
-.client-logo:nth-child(3) img { transform: scale(1.5); } /* 나무가 */
-.client-logo:nth-child(3):hover img { transform: scale(1.55); } 
+.client-logo:nth-child(3) img { transform: scale(1.4); } /* 나무가 */
+.client-logo:nth-child(3):hover img { transform: scale(1.45); } 
 
 .client-logo:nth-child(4) img { transform: scale(1.5); } /* 파워로직스 */
 .client-logo:nth-child(4):hover img { transform: scale(1.55); } 
