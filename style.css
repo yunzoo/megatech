@@ -49,6 +49,41 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
 .img-caption { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: #fff; text-align: center; padding: 5px 0; font-size: 0.85rem; }
 
+/* ==========================================
+   인증 및 수상 텍스트 포인트 컬러 추가
+   ========================================== */
+
+/* 텍스트 줄 간격 및 크기 살짝 조정 */
+.certi-text-list li {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+    word-break: keep-all; 
+}
+
+/* 텍스트 앞의 작은 기호를 연혁 동그라미와 같은 파란색으로 변경 */
+.certi-text-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary); /* 메인 파란색 */
+    font-weight: bold;
+    font-size: 1.2rem;
+    top: -2px;
+}
+
+/* 🔥 연혁의 연도처럼 굵고 파랗게 강조하는 클래스 */
+.c-point {
+    font-weight: 800;
+    color: var(--primary); /* 연혁 연도(t-year)와 완벽히 동일한 색상 */
+    font-size: 1.05rem;
+    margin-right: 6px;
+    display: inline-block;
+}
+
 /* 하단 사진 스크롤 그리드 (한 줄에 4장씩, 왼쪽 연혁과 높이 맞춤) */
 .certi-photo-grid {
     display: grid;
