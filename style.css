@@ -91,13 +91,22 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
     margin-right: 6px;
     display: inline-block;
 }
+/* ==========================================
+   왼쪽: 회사연혁 스크롤바 디자인 세팅
+   ========================================== */
+.scroll-timeline::-webkit-scrollbar { width: 6px; }
+.scroll-timeline::-webkit-scrollbar-track { background: transparent; }
+.scroll-timeline::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
+.scroll-timeline::-webkit-scrollbar-thumb:hover { background: #999; }
 
-/* 하단 사진 스크롤 그리드 (한 줄에 4장씩, 왼쪽 연혁과 높이 맞춤) */
+/* ==========================================
+   오른쪽: 인증 및 수상 사진 갤러리 
+   ========================================== */
 .certi-photo-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 한 줄에 4장 배치로 변경 */
-    gap: 10px; /* 4장이 꽉 차지 않게 간격을 살짝 조절 */
-    max-height: 380px; /* 🔥 핵심: 왼쪽 회사연혁(.scroll-timeline)의 높이 380px과 완벽하게 동일하게 맞춤 */
+    grid-template-columns: repeat(4, 1fr); /* 한 줄에 4장 */
+    gap: 10px;
+    max-height: 230px; /* 🔥 핵심: 사진 8개(2줄)만 보이도록 높이 제한 */
     overflow-y: auto;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -110,18 +119,19 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
     border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.03);
     transition: transform 0.2s;
-    object-fit: contain; /* 사진 비율이 찌그러지지 않고 원본 비율대로 예쁘게 꽉 차게 변경 */
+    object-fit: contain;
     background-color: #fff;
 }
 
-/* 사진에 마우스 올렸을 때 살짝 커지는 효과 */
 .certi-photo-grid img:hover {
     transform: scale(1.05);
 }
 
-/* 갤러리 영역 스크롤바 디자인 */
-.certi-photo-grid::-webkit-scrollbar { width: 5px; }
-.certi-photo-grid::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+/* 오른쪽 사진 갤러리 스크롤바 디자인 (왼쪽과 완벽 동일하게 맞춤) */
+.certi-photo-grid::-webkit-scrollbar { width: 6px; }
+.certi-photo-grid::-webkit-scrollbar-track { background: transparent; }
+.certi-photo-grid::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
+.certi-photo-grid::-webkit-scrollbar-thumb:hover { background: #999; }}
 
 
 /* 협력사 */
