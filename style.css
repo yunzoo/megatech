@@ -209,10 +209,10 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
    ========================================== */
 
 .client-logo:nth-child(1) img {
-    transform: scale(1.6); /* 삼성전자 */
+    transform: scale(1.5); /* 삼성전자 */
 }
 .client-logo:nth-child(1):hover img {
-    transform: scale(1.65); /* 삼성전자 */
+    transform: scale(1.55); /* 삼성전자 */
 }
 
 .client-logo:nth-child(2) img {
