@@ -193,7 +193,42 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .c-btn { padding: 12px 25px; border-radius: 6px; color: #fff; text-decoration: none; font-weight: 700; }
 .c-btn.mail { background: #333; }
 .c-btn.blog { background: #03cf5d; }
-.map-container { width: 100%; height: 350px; border-radius: 12px; overflow: hidden; border: 1px solid #ddd; }
+
+/* ==========================================
+   구글 지도 나란히 2개 배치 스타일
+   ========================================== */
+.maps-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 지도를 정확히 반반(1:1) 비율로 나란히 배치 */
+    gap: 15px; /* 두 지도 사이의 간격 */
+    width: 100%;
+    height: 350px;
+}
+
+.map-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.map-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+    text-align: center;
+    background: #f8f9fa;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.map-box iframe {
+    flex: 1;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 
 .footer { background: #222; color: #888; text-align: center; padding: 20px; font-size: 0.9rem; }
 
@@ -215,6 +250,8 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
     
     /* 모바일에서는 슬라이더가 2개씩 보이도록 조정 */
     .carousel-slide { min-width: calc(50% - 7.5px); } 
+   /* 모바일에서는 지도를 위/아래로 쌓고 높이를 늘림 */
+    .maps-wrapper { grid-template-columns: 1fr; height: 600px; gap: 25px; }
 }
 
 /* 애니메이션 엔진 */
