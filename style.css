@@ -1,4 +1,4 @@
-"/* 공통 초기화 */
+/* 공통 초기화 */
 :root { --primary: #0050a0; --primary-dark: #003670; --bg-light: #fdfdfd; --bg-alt: #f4f7f9; --text-main: #333333; --border-color: #eaeaea; --max-width: 1200px; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -385,4 +385,3 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 /* 애니메이션 엔진 */
 .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
-"
