@@ -144,12 +144,65 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .certi-photo-grid::-webkit-scrollbar-thumb:hover { background: #999; }
 
 
-/* 협력사 */
-.client-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; align-items: center; }
-.client-logo { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 20px; display: flex; justify-content: center; align-items: center; height: 80px; transition: 0.3s; }
-.client-logo:hover { border-color: var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-.client-logo img { max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: 0.3s; }
-.client-logo:hover img { filter: grayscale(0%); opacity: 1; }
+/* ==========================================
+   주요 협력사 (Our Clients)
+   ========================================== */
+.client-grid { 
+    display: grid; 
+    grid-template-columns: repeat(12, 1fr); /* 전체를 12칸 격자로 나눔 */
+    gap: 20px; 
+    align-items: center; 
+}
+
+/* 첫 번째 줄 (1~3번째 로고): 12칸 중 4칸씩 차지 ➔ 한 줄에 딱 3개 배치 */
+.client-logo:nth-child(-n+3) {
+    grid-column: span 4;
+}
+
+/* 두 번째 줄 (4~7번째 로고): 12칸 중 3칸씩 차지 ➔ 한 줄에 딱 4개 배치 */
+.client-logo:nth-child(n+4) {
+    grid-column: span 3;
+}
+
+.client-logo { 
+    background: #fff; 
+    border: 1px solid #eee; 
+    border-radius: 8px; 
+    padding: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 80px; 
+    transition: 0.3s; 
+}
+
+/* 🖱️ 마우스를 올렸을 때 겉에 파란 선과 그림자 효과 (기존 유지) */
+.client-logo:hover { 
+    border-color: var(--primary); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06); 
+    transform: translateY(-3px); /* 마우스 올렸을 때 살짝 위로 뜨는 효과 추가 */
+}
+
+/* 🎨 흑백 필터 삭제: 처음부터 컬러로 선명하게 보이도록 설정 */
+.client-logo img { 
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
+    transition: transform 0.3s; 
+}
+
+/* 마우스를 올리면 로고가 아주 살짝 커지면서 강조되는 애니메이션 */
+.client-logo:hover img { 
+    transform: scale(1.05); 
+}
+
+/* 모바일 반응형 (스마트폰에서는 2개씩 보이도록 세팅) */
+@media (max-width: 768px) {
+    .client-logo:nth-child(-n+3), 
+    .client-logo:nth-child(n+4) {
+        grid-column: span 6; /* 12칸 중 6칸씩 차지 ➔ 한 줄에 2개씩 */
+    }
+}
 
 /* 2. 제품소개 */
 .product-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
