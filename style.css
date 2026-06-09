@@ -138,12 +138,15 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .carousel-btn.prev { left: 0; }
 .carousel-btn.next { right: 0; }
 
-.tour-carousel .carousel-slide { flex: 0 0 calc(100% / 3); }
-.tour-carousel img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-.product-carousel .carousel-slide { flex: 0 0 calc(100% / 4); text-align: center; }
-.product-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee; transition: 0.3s; cursor: pointer; }
+.tour-carousel .carousel-slide { flex: 0 0 calc(100% / 2); }
+.tour-carousel img { width: 100%; height: 360px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.product-carousel .carousel-slide { flex: 0 0 calc(100% / 3); text-align: center; }
+.product-item img { width: 100%; height: 280px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee; transition: 0.3s; cursor: pointer; }
 .product-item img:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.08); }
 .product-item p { font-size: 1.1rem; font-weight: 700; color: #333; }
+
+.equip-carousel .carousel-slide { flex: 0 0 calc(100% / 4); text-align: center; }
+.equip-carousel img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;}
 
 /* ==========================================
    고객문의 섹션 (좌/우 카드형)
