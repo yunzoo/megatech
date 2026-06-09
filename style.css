@@ -259,51 +259,53 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .carousel-btn.next { margin-left: 15px; }
 .carousel-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
 
-/* 4. 고객문의 */
-.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
-.info-block { margin-bottom: 30px; }
-.info-block h4 { font-size: 1.2rem; border-left: 4px solid var(--primary); padding-left: 10px; margin-bottom: 10px; }
-.channel-buttons { display: flex; gap: 10px; margin-top: 20px; }
-.c-btn { padding: 12px 25px; border-radius: 6px; color: #fff; text-decoration: none; font-weight: 700; }
-.c-btn.mail { background: #333; }
-.c-btn.blog { background: #03cf5d; }
-
 /* ==========================================
-   구글 지도 나란히 2개 배치 스타일
+   4. 고객문의 섹션 (좌/우 카드형 레이아웃)
    ========================================== */
-.maps-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 지도를 정확히 반반(1:1) 비율로 나란히 배치 */
-    gap: 15px; /* 두 지도 사이의 간격 */
-    width: 100%;
-    height: 350px;
+.contact-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); /* 화면을 정확히 1:1 반반으로 나눔 */
+    gap: 40px; 
 }
 
-.map-box {
+/* 각각의 위치 정보와 지도를 감싸는 하얀색 카드 박스 */
+.location-card {
     display: flex;
     flex-direction: column;
-    height: 100%;
-}
-
-.map-label {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 8px;
-    text-align: center;
-    background: #f8f9fa;
-    padding: 6px;
-    border-radius: 6px;
+    background: #fff;
     border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
-.map-box iframe {
-    flex: 1;
+.info-block { 
+    margin-bottom: 20px; 
+}
+
+.info-block h4 { 
+    font-size: 1.25rem; 
+    border-left: 4px solid var(--primary); 
+    padding-left: 12px; 
+    margin-bottom: 15px; 
+    color: #111;
+}
+
+.info-block p { 
+    font-size: 1.05rem; 
+    color: #444; 
+    margin-bottom: 8px; 
+    word-break: keep-all;
+}
+
+/* 지도 영역 크기 및 디자인 세팅 */
+.map-box {
+    width: 100%;
+    height: 300px; /* 지도의 세로 높이 고정 */
     border-radius: 8px;
+    overflow: hidden;
     border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
-
 .footer { background: #222; color: #888; text-align: center; padding: 20px; font-size: 0.9rem; }
 
 /* 모바일 반응형 */
@@ -324,8 +326,16 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
     
     /* 모바일에서는 슬라이더가 2개씩 보이도록 조정 */
     .carousel-slide { min-width: calc(50% - 7.5px); } 
-   /* 모바일에서는 지도를 위/아래로 쌓고 높이를 늘림 */
-    .maps-wrapper { grid-template-columns: 1fr; height: 600px; gap: 25px; }
+/* 모바일에서는 좌우(1:1) 대신 위아래로 한 줄씩 꽉 차게 배치 */
+    .contact-grid { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+    }
+    
+    /* 모바일 화면에서는 지도 높이를 살짝 줄여서 화면 공간 확보 */
+    .map-box {
+        height: 250px; 
+    }
 }
 
 /* 애니메이션 엔진 */
