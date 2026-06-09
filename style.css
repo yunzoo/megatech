@@ -258,18 +258,34 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .spec-table .model-name { background-color: #e6f7ff; color: var(--primary-dark); font-size: 1.1rem; font-weight: 900; width: 20%; border: 2px solid var(--primary); }
 .valign-middle { vertical-align: middle; }
 
-/* 검사장비 슬라이더 (캐러셀) */
-.inspection-slider-wrap { margin-top: 20px; }
-.carousel-container { display: flex; align-items: center; justify-content: center; position: relative; width: 100%; }
-.carousel-track-container { overflow: hidden; width: 100%; padding: 10px 0; }
-.carousel-track { display: flex; transition: transform 0.4s ease-in-out; list-style: none; gap: 15px; }
-.carousel-slide { min-width: calc(25% - 11.25px); background: #fff; border: 1px solid #eee; border-radius: 8px; text-align: center; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-.carousel-slide img { width: 100%; height: 140px; object-fit: contain; margin-bottom: 10px; }
-.carousel-slide p { font-size: 0.9rem; font-weight: 700; color: #333; margin: 0; }
-.carousel-btn { background: #fff; color: var(--primary); border: 1px solid #ddd; font-size: 1.2rem; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 50%; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.1); flex-shrink: 0; transition: 0.3s; }
-.carousel-btn.prev { margin-right: 15px; }
-.carousel-btn.next { margin-left: 15px; }
+/* ==========================================
+   만능 슬라이더(Carousel) 공통 디자인
+   ========================================== */
+.carousel-container { position: relative; width: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 10px 0; }
+.carousel-track-container { width: 92%; overflow: hidden; }
+.carousel-track { display: flex; transition: transform 0.4s ease-in-out; list-style: none; padding: 0; margin: 0; }
+.carousel-slide { padding: 0 10px; box-sizing: border-box; }
+
+.carousel-btn { background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: absolute; z-index: 10; transition: 0.3s; color: #555; }
 .carousel-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+
+/* 1. 회사 둘러보기 전용 (화면에 3개씩, 큰 사진) */
+.tour-carousel .carousel-slide { flex: 0 0 calc(100% / 3); }
+.tour-carousel img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* 2. 주요 제품군 전용 (화면에 4개씩, 기존 디자인 유지) */
+.product-carousel .carousel-slide { flex: 0 0 calc(100% / 4); text-align: center; }
+.product-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 1px solid #eee; transition: 0.3s; cursor: pointer; /* 👈 클릭 가능하도록 손가락 표시 */ }
+.product-item img:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.08); }
+.product-item p { font-size: 1.1rem; font-weight: 700; color: #333; }
+
+/* 모바일 반응형 (스마트폰에서는 1~2개씩만 보이도록) */
+@media (max-width: 768px) {
+    .tour-carousel .carousel-slide { flex: 0 0 100%; }
+    .product-carousel .carousel-slide { flex: 0 0 calc(100% / 2); }
+}
 
 /* ==========================================
    4. 고객문의 섹션 (좌/우 카드형 레이아웃)
@@ -347,9 +363,7 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
     .client-grid { grid-template-columns: repeat(2, 1fr); }
     .process-flow { flex-direction: column; gap: 15px; }
     .process-arrow { transform: rotate(90deg); }
-    
-    /* 모바일에서는 슬라이더가 2개씩 보이도록 조정 */
-    .carousel-slide { min-width: calc(50% - 7.5px); } 
+
 /* 모바일에서는 좌우(1:1) 대신 위아래로 한 줄씩 꽉 차게 배치 */
     .contact-grid { 
         grid-template-columns: 1fr; 
