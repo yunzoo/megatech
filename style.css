@@ -208,12 +208,21 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
    특정 로고(2번째 MCNEX) 개별 크기 확대
    ========================================== */
 .client-logo:nth-child(2) img {
-    transform: scale(1.4); /* 🔥 기본 크기에서 1.4배 확대 (원하는 만큼 숫자를 조절하세요 ex. 1.2, 1.6) */
+    transform: scale(1.8); /* 🔥 기본 크기에서 1.4배 확대 (원하는 만큼 숫자를 조절하세요 ex. 1.2, 1.6) */
 }
 
 /* 2번째 로고에 마우스를 올렸을 때의 애니메이션 비율도 같이 수정 */
 .client-logo:nth-child(2):hover img {
-    transform: scale(1.45); /* 기본 상태(1.4)보다 아주 살짝 더 커지게 설정 */
+    transform: scale(1.85); /* 기본 상태(1.4)보다 아주 살짝 더 커지게 설정 */
+}
+
+.client-logo:nth-child(7) img {
+    transform: scale(1.5); /* 🔥 기본 크기에서 1.4배 확대 (원하는 만큼 숫자를 조절하세요 ex. 1.2, 1.6) */
+}
+
+/* 7번째 로고에 마우스를 올렸을 때의 애니메이션 비율도 같이 수정 */
+.client-logo:nth-child(7):hover img {
+    transform: scale(1.55); /* 기본 상태(1.4)보다 아주 살짝 더 커지게 설정 */
 }
 
 /* 2. 제품소개 */
