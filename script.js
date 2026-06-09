@@ -64,34 +64,36 @@ document.addEventListener("DOMContentLoaded", function () {
         startInterval();
     }
 
-    // ==========================================
-    // 3. 인증서 팝업 (Lightbox) 기능
+// ==========================================
+    // 3. 인증서 & 제품 사진 팝업 (Lightbox) 통합
     // ==========================================
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
     const closeModal = document.querySelector(".modal-close");
-    const certiImages = document.querySelectorAll(".certi-photo-grid img");
+    
+    // 🚀 핵심 수정: 인증서 사진뿐만 아니라 제품 사진(.product-item img)도 팝업 대상으로 같이 선택해 줍니다!
+    const popupImages = document.querySelectorAll(".certi-photo-grid img, .product-item img");
 
     if (modal && modalImg && closeModal) {
         // 사진 클릭 시 팝업 열기
-        certiImages.forEach(img => {
+        popupImages.forEach(img => {
             img.addEventListener("click", function() {
                 modal.classList.add("active");
-                modalImg.src = this.src; // 클릭한 사진의 주소를 팝업에 복사
+                modalImg.src = this.src; 
             });
         });
 
         // X 버튼 누르면 닫기
         closeModal.addEventListener("click", () => modal.classList.remove("active"));
         
-        // 사진 바깥쪽(검은 배경) 누르거나 이미지 자체를 눌러도 닫기
+        // 배경 누르면 닫기
         modal.addEventListener("click", (e) => {
             if (e.target === modal || e.target === modalImg) {
                 modal.classList.remove("active");
             }
         });
     }
-
+    
     // ==========================================
     // 4. 만능 다중 슬라이더 엔진 (Carousel)
     // ==========================================
