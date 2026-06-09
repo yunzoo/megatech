@@ -94,7 +94,8 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 /* ==========================================
    왼쪽: 회사연혁 스크롤바 디자인 세팅
    ========================================== */
-.scroll-timeline::-webkit-scrollbar { width: 6px; }
+.scroll-timeline::-webkit-scrollbar { max-height: 500px; /* 🔥 기존 380px 이었던 숫자를 500px, 600px 등 원하시는 만큼 늘려주세요 */
+    overflow-y: auto; }
 .scroll-timeline::-webkit-scrollbar-track { background: transparent; }
 .scroll-timeline::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
 .scroll-timeline::-webkit-scrollbar-thumb:hover { background: #999; }
@@ -104,9 +105,9 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
    ========================================== */
 .certi-photo-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 한 줄에 4장 */
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    max-height: 230px; /* 🔥 핵심: 사진 8개(2줄)만 보이도록 높이 제한 */
+    max-height: 350px; /* 🔥 기존 230px 이었던 숫자를 늘려주세요 */핵심: 사진 8개(2줄)만 보이도록 높이 제한 */
     overflow-y: auto;
     padding-right: 10px;
     padding-bottom: 10px;
