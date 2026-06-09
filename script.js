@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    // 1. 모바일 햄버거 메뉴
+    // 1. 모바일 햄버거 메뉴 (기존)
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-menu");
     if (menuToggle && navMenu) {
@@ -10,9 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 2. 인트로 배경 이미지 슬라이더 (4초 자동 전환)
+    // ==========================================
+    // 2. 인트로 배경 슬라이더 (점 기능 추가)
+    // ==========================================
     const heroSection = document.getElementById("intro");
-    if(heroSection) {
+    const heroDotsContainer = document.getElementById("heroDots");
+    if(heroSection && heroDotsContainer) {
         const images = [
             "img/about_hq_exterior.jpg",
             "img/about_vn_exterior.jpg",
@@ -20,30 +23,97 @@ document.addEventListener("DOMContentLoaded", function () {
             "img/prod_roll_1.jpg"
         ];
         let heroIndex = 0;
-        heroSection.style.backgroundImage = `url(${images[0]})`;
-        setInterval(() => {
-            heroIndex = (heroIndex + 1) % images.length;
+        let slideInterval;
+
+        // 점(Dots) 생성
+        images.forEach((_, index) => {
+            const dot = document.createElement("div");
+            dot.classList.add("hero-dot");
+            if(index === 0) dot.classList.add("active");
+            
+            // 점 클릭 시 해당 사진으로 이동
+            dot.addEventListener("click", () => {
+                heroIndex = index;
+                updateHeroSlide();
+                resetInterval(); // 클릭 후 타이머 초기화
+            });
+            heroDotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".hero-dot");
+
+        function updateHeroSlide() {
             heroSection.style.backgroundImage = `url(${images[heroIndex]})`;
-        }, 4000);
+            dots.forEach(d => d.classList.remove("active"));
+            dots[heroIndex].classList.add("active");
+        }
+
+        function startInterval() {
+            slideInterval = setInterval(() => {
+                heroIndex = (heroIndex + 1) % images.length;
+                updateHeroSlide();
+            }, 4000);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+
+        updateHeroSlide(); // 초기 1회 실행
+        startInterval();
     }
 
-    // 3. 검사장비 4열 슬라이더 (Carousel)
-    const track = document.getElementById('inspectionTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+    // ==========================================
+    // 3. 인증서 팝업 (Lightbox) 기능
+    // ==========================================
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeModal = document.querySelector(".modal-close");
+    const certiImages = document.querySelectorAll(".certi-photo-grid img");
+
+    if (modal && modalImg && closeModal) {
+        // 사진 클릭 시 팝업 열기
+        certiImages.forEach(img => {
+            img.addEventListener("click", function() {
+                modal.classList.add("active");
+                modalImg.src = this.src; // 클릭한 사진의 주소를 팝업에 복사
+            });
+        });
+
+        // X 버튼 누르면 닫기
+        closeModal.addEventListener("click", () => modal.classList.remove("active"));
+        
+        // 사진 바깥쪽(검은 배경) 누르거나 이미지 자체를 눌러도 닫기
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal || e.target === modalImg) {
+                modal.classList.remove("active");
+            }
+        });
+    }
+
+    // ==========================================
+    // 4. 만능 다중 슬라이더 엔진 (Carousel)
+    // ==========================================
+    const carousels = document.querySelectorAll('.carousel-container');
     
-    if (track && prevBtn && nextBtn) {
+    carousels.forEach(container => {
+        const track = container.querySelector('.carousel-track');
+        const prevBtn = container.querySelector('.prev');
+        const nextBtn = container.querySelector('.next');
+        if (!track || !prevBtn || !nextBtn) return;
+
         let currentIndex = 0;
         
         const updateCarousel = () => {
-            // 자식 요소의 너비 + gap(15px)을 더하여 이동 거리 계산
+            // 하나의 슬라이드 너비 + gap(간격) 계산
             const slideWidth = track.children[0].getBoundingClientRect().width + 15;
             track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
         };
         
         nextBtn.addEventListener('click', () => {
-            // PC화면(4개 노출)과 모바일화면(2개 노출)에 따른 최대 인덱스 계산
-            const visibleItems = window.innerWidth <= 768 ? 2 : 4;
+            // 화면에 보여지는 아이템 개수 계산
+            const visibleItems = Math.floor(container.offsetWidth / track.children[0].offsetWidth);
             const maxIndex = track.children.length - visibleItems;
             
             if (currentIndex < maxIndex) {
@@ -59,14 +129,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
         
-        // 화면 크기 조절 시 슬라이더 초기화
         window.addEventListener('resize', () => {
             currentIndex = 0;
             updateCarousel();
         });
-    }
+    });
 
-    // 4. 스크롤 애니메이션 (Reveal)
+    // 5. 스크롤 애니메이션 (Reveal)
     function revealOnScroll() {
         const reveals = document.querySelectorAll(".reveal");
         const windowHeight = window.innerHeight;
@@ -77,5 +146,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll(); // 로딩 직후 최초 실행
+    revealOnScroll();
 });
