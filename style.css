@@ -224,10 +224,10 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 }
 
 .client-logo:nth-child(4) img {
-    transform: scale(1.7); /* 파워로직스 */
+    transform: scale(1.5); /* 파워로직스 */
 }
 .client-logo:nth-child(4):hover img {
-    transform: scale(1.75); /* 파워로직스 */
+    transform: scale(1.55); /* 파워로직스 */
 }
 
 .client-logo:nth-child(7) img {
