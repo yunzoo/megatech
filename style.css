@@ -204,6 +204,18 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
     }
 }
 
+/* ==========================================
+   특정 로고(2번째 MCNEX) 개별 크기 확대
+   ========================================== */
+.client-logo:nth-child(2) img {
+    transform: scale(1.4); /* 🔥 기본 크기에서 1.4배 확대 (원하는 만큼 숫자를 조절하세요 ex. 1.2, 1.6) */
+}
+
+/* 2번째 로고에 마우스를 올렸을 때의 애니메이션 비율도 같이 수정 */
+.client-logo:nth-child(2):hover img {
+    transform: scale(1.45); /* 기본 상태(1.4)보다 아주 살짝 더 커지게 설정 */
+}
+
 /* 2. 제품소개 */
 .product-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
 .product-card { background: #fff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
