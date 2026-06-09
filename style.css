@@ -91,23 +91,32 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
     margin-right: 6px;
     display: inline-block;
 }
+
 /* ==========================================
-   왼쪽: 회사연혁 스크롤바 디자인 세팅
+   왼쪽: 회사연혁 영역 설정
    ========================================== */
-.scroll-timeline::-webkit-scrollbar { max-height: 500px; /* 🔥 기존 380px 이었던 숫자를 500px, 600px 등 원하시는 만큼 늘려주세요 */
-    overflow-y: auto; }
+.scroll-timeline {
+    max-height: 500px; /* 🔥 왼쪽 연혁 높이는 여기서 조절하세요 */
+    overflow-y: auto;
+    padding-left: 30px;
+    border-left: 3px solid var(--primary);
+    padding-right: 15px;
+}
+
+/* 왼쪽 연혁 스크롤바 디자인 */
+.scroll-timeline::-webkit-scrollbar { width: 6px; }
 .scroll-timeline::-webkit-scrollbar-track { background: transparent; }
 .scroll-timeline::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
 .scroll-timeline::-webkit-scrollbar-thumb:hover { background: #999; }
 
 /* ==========================================
-   오른쪽: 인증 및 수상 사진 갤러리 
+   오른쪽: 인증 및 수상 사진 갤러리 영역 설정
    ========================================== */
 .certi-photo-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    max-height: 350px; /* 🔥 기존 230px 이었던 숫자를 늘려주세요 */핵심: 사진 8개(2줄)만 보이도록 높이 제한 */
+    max-height: 350px; /* 🔥 오른쪽 사진 갤러리 높이는 여기서 조절하세요 */
     overflow-y: auto;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -128,11 +137,11 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
     transform: scale(1.05);
 }
 
-/* 오른쪽 사진 갤러리 스크롤바 디자인 (왼쪽과 완벽 동일하게 맞춤) */
+/* 오른쪽 사진 갤러리 스크롤바 디자인 */
 .certi-photo-grid::-webkit-scrollbar { width: 6px; }
 .certi-photo-grid::-webkit-scrollbar-track { background: transparent; }
 .certi-photo-grid::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
-.certi-photo-grid::-webkit-scrollbar-thumb:hover { background: #999; }}
+.certi-photo-grid::-webkit-scrollbar-thumb:hover { background: #999; }
 
 
 /* 협력사 */
