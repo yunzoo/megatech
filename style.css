@@ -43,7 +43,7 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .ceo-signature img { height: 50px; width: auto; vertical-align: middle; margin-right: 15px; }
 .ceo-signature span { font-size: 1.1rem; color: #333; vertical-align: middle; }
 
-.ceo-photo-box { width: 100%; height: 500px; border-radius: 8px; overflow: hidden; margin-bottom: 20px; background: #f0f0f0; }
+.ceo-photo-box { width: 100%; height: 250px; border-radius: 8px; overflow: hidden; margin-bottom: 20px; background: #f0f0f0; }
 .ceo-photo-box img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
 .history-certi-grid, .management-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 70px; }
