@@ -155,6 +155,9 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .certi-photo-grid::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
 .certi-photo-grid::-webkit-scrollbar-thumb:hover { background: #999; }
 
+.policy-card {
+    background: #f8f9fa;
+    padding
 
 /* ==========================================
    주요 협력사 (Our Clients)
