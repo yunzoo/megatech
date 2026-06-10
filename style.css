@@ -213,17 +213,15 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 
     /* 🔥 협력사 로고 깨짐 강제 수정 부분 */
     .client-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-    .client-logo, .client-logo:nth-child(-n+3), .client-logo:nth-child(n+4) { 
-        grid-column: span 1 !important; 
-        height: 60px; 
-        padding: 10px; 
-    }
+    .client-logo, .client-logo:nth-child(-n+3), .client-logo:nth-child(n+4) { grid-column: span 1 !important; height: 60px; padding: 10px; }
 
-    .equipment-card { flex-direction: column; padding: 20px; gap: 20px; }
+    .equipment-card { flex-direction: column; padding: 15px; gap: 15px; }
     .equipment-multi-img { flex-direction: row; gap: 5px; }
     .equipment-multi-img .img-item { flex: 1; }
     .equipment-multi-img .img-item img { width: 100%; height: 80px; margin-bottom: 5px; }
     .equipment-multi-img .img-item p { font-size: 0.75rem; }
+    .spec-table-wrap { width: 100%; padding: 0 5px; }
+    .spec-table { width: 100%; }
    
     .contact-grid { grid-template-columns: 1fr; gap: 30px; }
     .map-box { height: 250px; }
