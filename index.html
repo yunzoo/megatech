@@ -453,9 +453,19 @@
     <footer class="footer">
         <div class="container">
             <p>© 2026 (주)메가테크. All Rights Reserved.</p>
+            <a href="#" id="privacyBtn" style="color: #bbb; margin-left: 15px; text-decoration: underline;">개인정보취급방침</a>
         </div>
     </footer>
-
+    
+    <div id="privacyModal" class="modal">
+        <div class="modal-content" style="background:#fff; padding:40px; max-width:600px; color:#333; overflow-y:auto; max-height:80%;">
+            <span class="modal-close" id="closePrivacy">&times;</span>
+            <h2 style="margin-bottom:20px;">개인정보취급방침</h2>
+            <p>여기에 개인정보취급방침 내용을 입력하세요...</p>
+            <p>예: 1. 개인정보의 수집 및 이용 목적...</p>
+        </div>
+    </div>
+    
     <div id="imageModal" class="modal">
         <span class="modal-close">&times;</span>
         <img class="modal-content" id="modalImg">
