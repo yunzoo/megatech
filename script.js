@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // 🔥 수정된 부분: class 대신 고유 ID(closeImageModal)를 사용하도록 변경!
     const closeImageBtn = document.getElementById("closeImageModal"); 
-    const popupImages = document.querySelectorAll(".certi-photo-grid img, .product-item img, .tour-carousel img");
+    const popupImages = document.querySelectorAll(".certi-photo-grid img, .product-item img, .tour-carousel img, .org-image-wrap img");
 
     // 🔥 조건문에 popupImages.length > 0 추가
     if (modal && modalImg && popupImages.length > 0) {
