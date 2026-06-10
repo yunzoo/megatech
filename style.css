@@ -66,6 +66,11 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .certi-text-list li::before { content: '•'; position: absolute; left: 0; color: var(--primary); font-weight: bold; font-size: 1.2rem; top: -2px; }
 .c-point { font-weight: 800; color: var(--primary); font-size: 1.05rem; margin-right: 6px; display: inline-block; }
 
+.t-desc-list { list-style: none; padding: 0; margin: 10px 0 0 0; }
+.t-desc-list li { display: flex; align-items: flex-start; font-size: 0.95rem; color: #444; margin-bottom: 8px; line-height: 1.5; word-break: keep-all; }
+.t-month { font-weight: 800; color: var(--primary); min-width: 35px; display: inline-block; }
+.t-month::after { content: '|'; color: #ccc; margin-left: 8px; font-weight: normal; }
+
 .scroll-timeline { height: 480px; overflow-y: auto; padding-left: 30px; border-left: 3px solid var(--primary); padding-right: 15px;}
 .scroll-timeline::-webkit-scrollbar { width: 6px; }
 .scroll-timeline::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
