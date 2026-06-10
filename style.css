@@ -84,6 +84,7 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .certi-photo-grid::-webkit-scrollbar-thumb { background: #bbb; border-radius: 4px; }
 .certi-photo-grid img { width: 100%; height: auto; border: 1px solid #ddd; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); transition: transform 0.2s; object-fit: contain; background-color: #fff; cursor: pointer; }
 .certi-photo-grid img:hover { transform: scale(1.05); }
+.tour-carousel img { cursor: pointer; }
 
 /* ==========================================
    주요 협력사 (Our Clients)
