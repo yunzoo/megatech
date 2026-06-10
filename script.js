@@ -150,3 +150,30 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
 });
+
+// 6. 개인정보취급방침 팝업 기능
+    const privacyBtn = document.getElementById("privacyBtn");
+    const privacyModal = document.getElementById("privacyModal");
+    const closePrivacy = document.getElementById("closePrivacy");
+
+    if (privacyBtn && privacyModal) {
+        // 버튼 클릭 시 열기
+        privacyBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            privacyModal.classList.add("active");
+        });
+        
+        // X 버튼 클릭 시 닫기
+        if (closePrivacy) {
+            closePrivacy.addEventListener("click", () => {
+                privacyModal.classList.remove("active");
+            });
+        }
+        
+        // 배경 클릭 시 닫기
+        privacyModal.addEventListener("click", (e) => {
+            if (e.target === privacyModal) {
+                privacyModal.classList.remove("active");
+            }
+        });
+    }
