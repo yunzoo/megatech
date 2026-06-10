@@ -127,10 +127,15 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 
 .spec-table-wrap { overflow-x: auto; width: 100%; margin-bottom: 60px; }
 .spec-table { width: 100%; border-collapse: collapse; text-align: center; font-size: 0.9rem; background: #fff; border: 2px solid #ccc; }
-.spec-table th, .spec-table td { border: 1px solid #ddd; padding: 12px; }
+.spec-table th, .spec-table td { border: 1px solid #ddd; padding: 15px; } 
 .spec-table th { background-color: #f7f7f7; color: #555; font-size: 0.85rem; }
 .spec-table .model-name { background-color: #e6f7ff; color: var(--primary-dark); font-size: 1.1rem; font-weight: 900; width: 20%; border: 2px solid var(--primary); }
 .valign-middle { vertical-align: middle; }
+
+.equipment-card { display: flex; gap: 40px; align-items: center; background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 30px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+.equipment-img { flex: 1; max-width: 400px; text-align: center; }
+.equipment-img img { width: 100%; height: auto; border-radius: 8px; object-fit: contain; }
+.equipment-card .spec-table-wrap { flex: 2; margin-bottom: 0; }
 
 /* ==========================================
    만능 슬라이더(Carousel) 디자인
@@ -204,6 +209,8 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
         padding: 10px; 
     }
 
+    .equipment-card { flex-direction: column; padding: 20px; gap: 20px; }
+    .equipment-img { max-width: 100%; }
     .contact-grid { grid-template-columns: 1fr; gap: 30px; }
     .map-box { height: 250px; }
     
