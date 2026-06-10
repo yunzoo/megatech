@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModal = document.querySelector(".modal-close");
     
     // 🚀 핵심 수정: 인증서 사진뿐만 아니라 제품 사진(.product-item img)도 팝업 대상으로 같이 선택해 줍니다!
-    const popupImages = document.querySelectorAll(".certi-photo-grid img, .product-item img");
+    const popupImages = document.querySelectorAll(".certi-photo-grid img, .product-item img, .tour-carousel img");
 
     if (modal && modalImg && closeModal) {
         // 사진 클릭 시 팝업 열기
