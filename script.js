@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    // 1. 모바일 햄버거 메뉴 (기존)
+    // 1. 모바일 햄버거 메뉴
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-menu");
     if (menuToggle && navMenu) {
@@ -10,9 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================
-    // 2. 인트로 배경 슬라이더 (점 기능 추가)
-    // ==========================================
+    // 2. 인트로 배경 슬라이더
     const heroSection = document.getElementById("intro");
     const heroDotsContainer = document.getElementById("heroDots");
     if(heroSection && heroDotsContainer) {
@@ -25,17 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
         let heroIndex = 0;
         let slideInterval;
 
-        // 점(Dots) 생성
         images.forEach((_, index) => {
             const dot = document.createElement("div");
             dot.classList.add("hero-dot");
             if(index === 0) dot.classList.add("active");
             
-            // 점 클릭 시 해당 사진으로 이동
             dot.addEventListener("click", () => {
                 heroIndex = index;
                 updateHeroSlide();
-                resetInterval(); // 클릭 후 타이머 초기화
+                resetInterval();
             });
             heroDotsContainer.appendChild(dot);
         });
@@ -60,22 +56,17 @@ document.addEventListener("DOMContentLoaded", function () {
             startInterval();
         }
 
-        updateHeroSlide(); // 초기 1회 실행
+        updateHeroSlide();
         startInterval();
     }
 
-// ==========================================
-    // 3. 인증서 & 제품 사진 팝업 (Lightbox) 통합
-    // ==========================================
+    // 3. 인증서 & 제품 사진 팝업 (Lightbox)
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
     const closeModal = document.querySelector(".modal-close");
-    
-    // 🚀 핵심 수정: 인증서 사진뿐만 아니라 제품 사진(.product-item img)도 팝업 대상으로 같이 선택해 줍니다!
     const popupImages = document.querySelectorAll(".certi-photo-grid img, .product-item img, .tour-carousel img");
 
     if (modal && modalImg && closeModal) {
-        // 사진 클릭 시 팝업 열기
         popupImages.forEach(img => {
             img.addEventListener("click", function() {
                 modal.classList.add("active");
@@ -83,10 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // X 버튼 누르면 닫기
         closeModal.addEventListener("click", () => modal.classList.remove("active"));
         
-        // 배경 누르면 닫기
         modal.addEventListener("click", (e) => {
             if (e.target === modal || e.target === modalImg) {
                 modal.classList.remove("active");
@@ -94,11 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     
-    // ==========================================
-    // 4. 만능 다중 슬라이더 엔진 (Carousel)
-    // ==========================================
+    // 4. 만능 다중 슬라이더 엔진
     const carousels = document.querySelectorAll('.carousel-container');
-    
     carousels.forEach(container => {
         const track = container.querySelector('.carousel-track');
         const prevBtn = container.querySelector('.prev');
@@ -106,18 +92,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!track || !prevBtn || !nextBtn) return;
 
         let currentIndex = 0;
-        
         const updateCarousel = () => {
-            // 하나의 슬라이드 너비 + gap(간격) 계산
             const slideWidth = track.children[0].getBoundingClientRect().width + 15;
             track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
         };
         
         nextBtn.addEventListener('click', () => {
-            // 화면에 보여지는 아이템 개수 계산
             const visibleItems = Math.floor(container.offsetWidth / track.children[0].offsetWidth);
             const maxIndex = track.children.length - visibleItems;
-            
             if (currentIndex < maxIndex) {
                 currentIndex++;
                 updateCarousel();
@@ -137,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // 5. 스크롤 애니메이션 (Reveal)
+    // 5. 스크롤 애니메이션
     function revealOnScroll() {
         const reveals = document.querySelectorAll(".reveal");
         const windowHeight = window.innerHeight;
@@ -149,12 +131,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
-});
 
-    // 6. 이용약관 팝업 기능
-    const termsBtn = document.getElementById("termsBtn");      // ID 변경
-    const termsModal = document.getElementById("termsModal");  // ID 변경
-    const closeTerms = document.getElementById("closeTerms");  // ID 변경
+    // 6. 이용약관 팝업 기능 (이제 내부로 들어옴)
+    const termsBtn = document.getElementById("termsBtn");
+    const termsModal = document.getElementById("termsModal");
+    const closeTerms = document.getElementById("closeTerms");
     
     if (termsBtn && termsModal) {
         termsBtn.addEventListener("click", (e) => {
