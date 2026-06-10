@@ -192,9 +192,9 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-#privacyModal .modal-content { cursor: default; }
-#privacyBtn { cursor: pointer; transition: 0.3s; }
-#privacyBtn:hover { color: #fff !important; }
+#termsModal .modal-content { cursor: default; }
+#termsBtn { cursor: pointer; transition: 0.3s; }
+#termsBtn:hover { color: #fff !important; }
 
 /* ==========================================
    모바일 반응형 (Mobile overrides)
