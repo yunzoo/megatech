@@ -208,6 +208,16 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .org-image-wrap img {cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .org-image-wrap img:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
 
+.unified-desc-card { display: grid; grid-template-columns: repeat(3, 1fr); background: #ffffff; border: 1px solid #eaeaea; border-radius: 12px; margin-top: 40px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; overflow: hidden; }
+.unified-desc-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); border-color: var(--primary); }
+.desc-item { position: relative; padding: 50px 30px 40px; text-align: center; border-right: 1px solid #f0f0f0; }
+.desc-item:last-child { border-right: none; }
+.desc-item .card-badge { position: absolute; top: 0; left: 50%; transform: translateX(-50%); background-color: var(--primary); color: #fff; padding: 6px 18px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; text-transform: uppercase; }
+.desc-item .card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+.desc-item .desc-title { font-size: 1.2rem; color: #222; margin-bottom: 15px; font-weight: 800; letter-spacing: -0.5px; }
+.desc-item .desc-text { font-size: 0.95rem; color: #666; line-height: 1.7; word-break: keep-all; }
+.desc-item .desc-text strong { color: var(--primary); font-weight: 800; }
+
 /* ==========================================
    모바일 반응형 (Mobile overrides)
    ========================================== */
