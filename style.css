@@ -126,7 +126,7 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .process-arrow { font-size: 1.5rem; color: #ccc; }
 
 .spec-table-wrap { overflow-x: auto; width: 100%; margin-bottom: 60px; }
-.spec-table { width: 95%; border-collapse: collapse; text-align: center; font-size: 0.9rem; background: #fff; border: 2px solid #ccc; }
+.spec-table { width: 97%; border-collapse: collapse; text-align: center; font-size: 0.9rem; background: #fff; border: 2px solid #ccc; }
 .spec-table th, .spec-table td { border: 1px solid #ddd; padding: 10px 5px; } 
 .spec-table th { background-color: #f7f7f7; color: #555; font-size: 0.85rem; }
 .spec-table .model-name { background-color: #e6f7ff; color: var(--primary-dark); font-size: 1.1rem; font-weight: 900; width: 20%; border: 2px solid var(--primary); }
