@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const images = [
             "img/about_hq_exterior.jpg",
             "img/about_vn_exterior.jpg",
-            "img/about_hq_production",
+            "img/about_hq_production.jpg",
             "img/prod_roll_1.jpg"
         ];
         let heroIndex = 0;
