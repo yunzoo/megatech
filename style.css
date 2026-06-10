@@ -205,6 +205,9 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
 .desc-text { font-size: 0.95rem; color: #666; line-height: 1.7; word-break: keep-all; }
 .desc-text strong { color: var(--primary); font-weight: 800; }
 
+.org-image-wrap img {cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.org-image-wrap img:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
+
 /* ==========================================
    모바일 반응형 (Mobile overrides)
    ========================================== */
