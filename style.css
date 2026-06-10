@@ -253,4 +253,8 @@ body { font-family: 'NanumSquare', sans-serif; color: var(--text-main); backgrou
     
     .tour-carousel .carousel-slide { flex: 0 0 100%; }
     .product-carousel .carousel-slide { flex: 0 0 calc(100% / 2); }
+
+    .unified-desc-card { grid-template-columns: 1fr; }
+    .desc-item { border-right: none; border-bottom: 1px solid #f0f0f0; padding: 40px 20px 30px; }
+    .desc-item:last-child { border-bottom: none; }
 }
