@@ -63,10 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // 3. 인증서 & 제품 사진 팝업 (Lightbox)
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
-    const closeModal = document.querySelector(".modal-close");
+    
+    // 🔥 수정된 부분: class 대신 고유 ID(closeImageModal)를 사용하도록 변경!
+    const closeImageBtn = document.getElementById("closeImageModal"); 
     const popupImages = document.querySelectorAll(".certi-photo-grid img, .product-item img, .tour-carousel img");
 
-    if (modal && modalImg && closeModal) {
+    // 🔥 조건문에 popupImages.length > 0 추가
+    if (modal && modalImg && popupImages.length > 0) {
         popupImages.forEach(img => {
             img.addEventListener("click", function() {
                 modal.classList.add("active");
@@ -74,7 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        closeModal.addEventListener("click", () => modal.classList.remove("active"));
+        // 🔥 수정된 부분: 닫기 버튼 변수명 변경
+        if (closeImageBtn) {
+            closeImageBtn.addEventListener("click", () => modal.classList.remove("active"));
+        }
         
         modal.addEventListener("click", (e) => {
             if (e.target === modal || e.target === modalImg) {
