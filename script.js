@@ -151,29 +151,26 @@ document.addEventListener("DOMContentLoaded", function () {
     revealOnScroll();
 });
 
-// 6. 개인정보취급방침 팝업 기능
-    const privacyBtn = document.getElementById("privacyBtn");
-    const privacyModal = document.getElementById("privacyModal");
-    const closePrivacy = document.getElementById("closePrivacy");
-
-    if (privacyBtn && privacyModal) {
-        // 버튼 클릭 시 열기
-        privacyBtn.addEventListener("click", (e) => {
+    // 6. 이용약관 팝업 기능
+    const termsBtn = document.getElementById("termsBtn");      // ID 변경
+    const termsModal = document.getElementById("termsModal");  // ID 변경
+    const closeTerms = document.getElementById("closeTerms");  // ID 변경
+    
+    if (termsBtn && termsModal) {
+        termsBtn.addEventListener("click", (e) => {
             e.preventDefault();
-            privacyModal.classList.add("active");
+            termsModal.classList.add("active");
         });
         
-        // X 버튼 클릭 시 닫기
-        if (closePrivacy) {
-            closePrivacy.addEventListener("click", () => {
-                privacyModal.classList.remove("active");
+        if (closeTerms) {
+            closeTerms.addEventListener("click", () => {
+                termsModal.classList.remove("active");
             });
         }
         
-        // 배경 클릭 시 닫기
-        privacyModal.addEventListener("click", (e) => {
-            if (e.target === privacyModal) {
-                privacyModal.classList.remove("active");
+        termsModal.addEventListener("click", (e) => {
+            if (e.target === termsModal) {
+                termsModal.classList.remove("active");
             }
         });
     }
