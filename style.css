@@ -282,4 +282,6 @@ iframe, img { max-width: 100%; }
     .spec-table { width: 100%; font-size: 0.65rem !important; table-layout: fixed; word-break: break-word; }
     .spec-table th, .spec-table td { padding: 8px 2px !important; }
     .spec-table .model-name { font-size: 0.75rem !important; width: 25%; }
+
+    .card-badge { white-space: nowrap !important; font-size: 0.85rem !important; padding-left: 10px !important; padding-right: 10px !important; width: 85% !important; }
 }
