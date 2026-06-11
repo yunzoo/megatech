@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if(heroSection && heroDotsContainer) {
         const images = [
             "img/about_hq_exterior.jpg",
-            "img/about_vn_exterior.jpg",
             "img/about_hq_production.jpg",
+            "img/about_vn_exterior.jpg",
             "img/bg2.jpg",
             "img/bg3.jpg",
             "img/bg4.jpg", 
