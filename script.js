@@ -10,9 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 2. 인트로 배경 슬라이더
+   // 2. 인트로 배경 슬라이더 (고급 페이드 & 줌 효과 적용)
     const heroSection = document.getElementById("intro");
     const heroDotsContainer = document.getElementById("heroDots");
+    
     if(heroSection && heroDotsContainer) {
         const images = [
             "img/about_hq_exterior.jpg",
@@ -27,11 +28,22 @@ document.addEventListener("DOMContentLoaded", function () {
         ];
         let heroIndex = 0;
         let slideInterval;
+        const slideLayers = [];
 
-        images.forEach((_, index) => {
+        // 이미지 레이어를 미리 겹쳐두기 (부드러운 전환을 위한 핵심!)
+        images.forEach((src, index) => {
+            const layer = document.createElement("div");
+            layer.classList.add("hero-slide-layer");
+            layer.style.backgroundImage = `url(${src})`;
+            heroSection.appendChild(layer);
+            slideLayers.push(layer);
+
             const dot = document.createElement("div");
             dot.classList.add("hero-dot");
-            if(index === 0) dot.classList.add("active");
+            if(index === 0) {
+                dot.classList.add("active");
+                layer.classList.add("active");
+            }
             
             dot.addEventListener("click", () => {
                 heroIndex = index;
@@ -44,8 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const dots = document.querySelectorAll(".hero-dot");
 
         function updateHeroSlide() {
-            heroSection.style.backgroundImage = `url(${images[heroIndex]})`;
+            // 모든 레이어 투명하게 만들기
+            slideLayers.forEach(layer => layer.classList.remove("active"));
             dots.forEach(d => d.classList.remove("active"));
+            
+            // 현재 순서의 레이어만 서서히 나타나게 하기
+            slideLayers[heroIndex].classList.add("active");
             dots[heroIndex].classList.add("active");
         }
 
@@ -53,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
             slideInterval = setInterval(() => {
                 heroIndex = (heroIndex + 1) % images.length;
                 updateHeroSlide();
-            }, 4000);
+            }, 5000); // 웅장함을 위해 사진 머무는 시간을 5초(5000ms)로 설정
         }
 
         function resetInterval() {
@@ -61,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
             startInterval();
         }
 
-        updateHeroSlide();
         startInterval();
     }
 
