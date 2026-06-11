@@ -277,4 +277,9 @@ iframe, img { max-width: 100%; }
     .process-item img { height: 55px; margin-bottom: 5px; border-radius: 4px; }
     .process-item p { font-size: 0.65rem; letter-spacing: -0.5px; }
     .process-group .process-arrow { transform: none; margin: 0; font-size: 0.8rem; flex: 0 0 auto; }
+
+    .spec-table-wrap { overflow-x: hidden; padding: 0; }
+    .spec-table { width: 100%; font-size: 0.65rem !important; table-layout: fixed; word-break: break-word; }
+    .spec-table th, .spec-table td { padding: 8px 2px !important; }
+    .spec-table .model-name { font-size: 0.75rem !important; width: 25%; }
 }
