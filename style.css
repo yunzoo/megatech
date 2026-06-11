@@ -71,7 +71,7 @@ iframe, img { max-width: 100%; }
 
 .t-desc-list { list-style: none; padding: 0; margin: 10px 0 0 0; }
 .t-desc-list li { display: flex; align-items: flex-start; font-size: 0.95rem; color: #444; margin-bottom: 8px; line-height: 1.5; word-break: keep-all; }
-.t-month { font-weight: 800; color: var(--primary); min-width: 35px; display: inline-block; }
+.t-month { font-weight: 800; color: var(--primary); min-width: 75px; flex-shrink: 0; display: inline-block; }
 .t-month::after { content: '|'; color: #ccc; margin-left: 8px; font-weight: normal; }
 
 .scroll-timeline { height: 480px; overflow-y: auto; padding-left: 30px; border-left: 3px solid var(--primary); padding-right: 15px;}
