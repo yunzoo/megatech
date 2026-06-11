@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let currentIndex = 0;
         const updateCarousel = () => {
-            const slideWidth = track.children[0].getBoundingClientRect().width + 15;
+            const slideWidth = track.children[0].getBoundingClientRect().width;
             track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
         };
         
