@@ -242,7 +242,8 @@ iframe, img { max-width: 100%; }
     .menu-toggle { display: block; }
     .nav-menu { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: #fff; flex-direction: column; text-align: center; padding: 20px 0; border-bottom: 1px solid #eee; }
     .nav-menu.active { display: flex; }
-    .hero-content h1 { font-size: 1.8rem; }
+    .hero-content h1 { font-size: 1.4rem !important; word-break: keep-all !important; line-height: 1.5; padding: 0 15px; } 
+    .hero-content p { font-size: 0.95rem !important; word-break: keep-all !important; padding: 0 15px; margin-top: 15px; }
 
     .about-ceo, .history-certi-grid, .management-grid, .contact-grid { flex-direction: column; grid-template-columns: 1fr; gap: 30px; }
     .gallery-grid, .product-grid { grid-template-columns: 1fr 1fr; }
