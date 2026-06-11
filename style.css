@@ -132,7 +132,7 @@ iframe, img { max-width: 100%; }
 .spec-table { width: 97%; border-collapse: collapse; text-align: center; font-size: 0.9rem; background: #fff; border: 2px solid #ccc; }
 .spec-table th, .spec-table td { border: 1px solid #ddd; padding: 15px 10px; } 
 .spec-table th { background-color: #f7f7f7; color: #555; font-size: 0.85rem; }
-.spec-table .model-name { background-color: #e6f7ff; color: var(--primary-dark); font-size: 1.1rem; font-weight: 900; width: 20%; border: 2px solid var(--primary); }
+.spec-table .model-name { background-color: #e6f7ff; color: var(--primary-dark); font-size: 0.95rem; font-weight: 900; width: 20%; border: 2px solid var(--primary); }
 .valign-middle { vertical-align: middle; }
 
 .equipment-card { display: flex; gap: 40px; align-items: center; background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 30px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
