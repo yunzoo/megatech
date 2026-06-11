@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
             "img/about_vn_exterior.jpg",
             "img/about_hq_production.jpg",
             "img/prod_process_0.jpg",
-            "img/main_bg1.jpg",
-            "img/main_bg2.jpg",
-            "img/main_bg3.jpg",
-            "img/main_bg4.jpg", 
-            "img/main_bg5.jpg"
+            "img/bg1.jpg",
+            "img/bg2.jpg",
+            "img/bg3.jpg",
+            "img/bg4.jpg", 
+            "img/bg5.jpg"
         ];
         let heroIndex = 0;
         let slideInterval;
